@@ -162,14 +162,16 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1600px;
-  height: 600px;
+  width: 100%;
   background: var(--color-background);
-  background-image: linear-gradient(
+  background-repeat: no-repeat; /* Evit repetarea imaginii */
+  background-size: cover; /* Redimensionez imaginea pentru a acoperi întregul container */
+  /* background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url("../images/first-page-background.jpg");
+    url("../images/first-page-background.jpg"); */
+
 }
 
 .hero-heading {
@@ -177,18 +179,18 @@ a {
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 696px;
-  height: 120px;
+  width: 80%;
 }
 
 .hero-heading h1 {
   color: #ffffff;
-
-  font-size: 44px;
   font-weight: 900;
-  line-height: 1.2em;
   letter-spacing: 0.06em;
   text-align: center;
+  font-size: 44px;
+  
+  line-height: 1.2em;
+  
 }
 
 .hero-heading span {
@@ -238,8 +240,6 @@ a {
 }
 .modal-content {
   background-color: #ffffff;
-  width: 528px;
-  height: 581px;
   border-radius: 4px;
   padding: 40px;
   position: absolute;
@@ -323,7 +323,6 @@ a {
 
 /* stilizez casuta efectiva de input */
 .modal-form input {
-  width: 448px;
   height: 40px;
   border-radius: 4px;
   border: 1px solid #21212133;
@@ -364,7 +363,6 @@ a {
 
 /* sub-sectiunea de comments */
 .comment-space {
-  width: 448px;
   height: 120px;
   border: 1px solid #21212133;
   border-radius: 4px;
@@ -473,6 +471,7 @@ input.input-ckd:checked ~ .checked-icon {
   line-height: 30px;
   letter-spacing: 0.06em;
   text-align: center;
+  cursor: pointer;
   margin: 0 auto; /* aliniez butonul pe mijloc orizontal în container */
   display: block; /* Asigură că butonul ocupă întreaga lățime disponibilă în container */
 }
@@ -492,15 +491,9 @@ input.input-ckd:checked ~ .checked-icon {
 
 .second-container-2 {
   display: flex;
-  width: 1170px;
-  height: 251px;
   align-items: center;
-  justify-content: space-between;
-  top: 774px;
-  margin-bottom: 94px;
-  margin-top: 94px;
-  margin-left: 215px;
-  margin-right: 215px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .advantage-icons {
@@ -530,7 +523,6 @@ input.input-ckd:checked ~ .checked-icon {
   font-weight: 400;
   line-height: 1.5em;
   letter-spacing: 0.03em;
-  text-align: left;
   color: var(--text-color);
 }
 
@@ -541,9 +533,12 @@ input.input-ckd:checked ~ .checked-icon {
 }
 
 .sub-menu {
-  width: 270px;
+  width: 354px;
   height: 75px;
-  margin: 0px;
+  margin: 0;
+  margin-right: 0;
+  text-align: left;
+
 }
 /* FINAL - pictogramele cu attention to details etc. */
 
@@ -1059,25 +1054,25 @@ footer {
   height: 60px;
   padding-left: 15px;
   padding-top: 16px;
-}
+  }
 
-.logo {
+  .logo {
   font-size: 24px;
   line-height: 28px;
 
   margin-top: 5px;
   width: 134px;
   height: 28px;
-}
-.main-navigation {
+  }
+  .main-navigation {
   display: none;
-}
-.container-2 {
+  }
+  .container-2 {
   display: none;
-}
+  }
 
   
-button.js-open-menu {
+  button.js-open-menu {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -1086,8 +1081,8 @@ button.js-open-menu {
   border: none;
   background-color: white;
   cursor: pointer;
-}
-button.js-open-menu > .icon-menu {
+  }
+  button.js-open-menu > .icon-menu {
   display: inline;
   position: absolute;
   width: 24px;
@@ -1096,18 +1091,18 @@ button.js-open-menu > .icon-menu {
   right: 22px;
   color: var(--heading-color);
   cursor: pointer;
-}
+  }
 
-/* setare buton inchidere meniu si meniu - ascunse, cand nu e deschis meniul */
-.icon-close-menu {
+  /* setare buton inchidere meniu si meniu - ascunse, cand nu e deschis meniul */
+  .icon-close-menu {
   display: none;
-}
-.mobile-menu {
+  }
+  .mobile-menu {
   display: none;
-}
+  }
 
-/* setare buton inchidere-cand meniul este deschis */
-.js-menu-container.is-open .js-close-menu > svg {
+  /* setare buton inchidere-cand meniul este deschis */
+  .js-menu-container.is-open .js-close-menu > svg {
   display: block;
   position: absolute;
   width: 18.67px;
@@ -1119,15 +1114,15 @@ button.js-open-menu > .icon-menu {
   border: 0;
   padding: 0;
   z-index: 2;
-}
+  }
 
-/* Ascund meniul-burger când meniul este deschis */
-.js-menu-container.is-open .icon-menu {
+  /* Ascund meniul-burger când meniul este deschis */
+  .js-menu-container.is-open .icon-menu {
   display: none;
-}
+  }
 
-/* Stilurile pentru meniul deschis */
-.js-menu-container.is-open .mobile-menu {
+  /* Stilurile pentru meniul deschis */
+  .js-menu-container.is-open .mobile-menu {
   display: block;
   position: absolute;
   top: 0;
@@ -1141,18 +1136,18 @@ button.js-open-menu > .icon-menu {
   padding-right: 83px;
   background-color: var(--color-backgroung-buttons);
   z-index: 1;
-}
+  }
 
-/* ----partea cu studio, portofolio,contacts */
-.mobile-sections {
+  /* ----partea cu studio, portofolio,contacts */
+  .mobile-sections {
   display: flex;
   flex-direction: column;
   list-style: none;
   gap: 32px;
   padding: 0;
-}
+  }
 
-.mobile-sections li > a {
+  .mobile-sections li > a {
   font-family: Roboto;
   font-size: 40px;
   font-weight: 500;
@@ -1160,30 +1155,30 @@ button.js-open-menu > .icon-menu {
   letter-spacing: 0.02em;
   text-align: left;
   color: var(--heading-color);
-}
+  }
 
-.mobile-sections li > a:hover,
-.mobile-sections li > a:focus {
+  .mobile-sections li > a:hover,
+  .mobile-sections li > a:focus {
   color: var(--link-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  }
 
-/* ----partea cu telefonul si email-ul */
-.mobile-menu-contacts {
+  /* ----partea cu telefonul si email-ul */
+  .mobile-menu-contacts {
   display: flex;
   flex-direction: column;
   gap: 32px;
   list-style: none;
   padding: 0;
   margin-top: 306px;
-}
+  }
 
-.mobile-tel {
+  .mobile-tel {
   width: 273px;
   height: 40px;
-}
+  }
 
-.mobile-menu-contacts .mobile-tel > a {
+  .mobile-menu-contacts .mobile-tel > a {
   font-family: Roboto;
   font-size: 34px;
   font-weight: 500;
@@ -1191,24 +1186,24 @@ button.js-open-menu > .icon-menu {
   letter-spacing: 0.02em;
   text-align: left;
   color: var(--link-color);
-}
+  }
 
-.mobile-email {
+  .mobile-email {
   width: 231px;
   height: 28px;
-}
+  }
 
-.mobile-menu-contacts .mobile-email > a {
+  .mobile-menu-contacts .mobile-email > a {
   font-size: 24px;
   font-weight: 500;
   line-height: 28px;
   letter-spacing: 0.02em;
   text-align: left;
   color: var(--text-color);
-}
+  }
 
-/* ----linkurile catre adresele din retelele de socializare */
-.socials-mobile {
+  /* ----linkurile catre adresele din retelele de socializare */
+  .socials-mobile {
   display: flex;
   list-style: none;
   width: 357px;
@@ -1217,9 +1212,9 @@ button.js-open-menu > .icon-menu {
   padding: 0;
   margin-top: 64px;
   justify-content: space-between;
-}
+  }
 
-.socials-mobile li > a {
+  .socials-mobile li > a {
   font-family: Roboto;
   font-size: 18px;
   font-weight: 500;
@@ -1227,9 +1222,77 @@ button.js-open-menu > .icon-menu {
   letter-spacing: 0.02em;
   text-align: left;
   color: var(--link-color);
+  }
+
+  /* final meniu Mobile */
+
+  /* Mobile - EFFECTIVE SOLUTIONS FOR YOUR BUSINESS section */
+
+  .first-section {
+    height: 400px;
+    background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/first-page-background-m.png");
+  }
+
+  .hero-heading {
+    height: 84px;
+  }
+
+  .hero-heading h1 {
+    font-size: 26px;
+    line-height: 42px;
+  }
+
+  /* Mobil - redimensionare modal din butonul "Request our service" */
+  .modal-content {
+  width: 450px;
+  height: 609px;
+  }
+
+  .modal-form input {
+    width: 370px;
+  }
+
+  .comment-space {
+  width: 370px;
+  }
+
+
+/* Tableta - pictogramele cu attention to details etc. */
+ .second-container-2 {
+  max-width: 480px;
+  height: 994px;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 94px;
+  margin-top: 94px;
+  
+ }
+
+ .sc-principal {
+  width: 450px;
+  height: 226px;
+ }
+ .advantage-icons {
+    width: 450px;
+  height: 120px;
+  
+  }
+  .sub-menu {
+  width: 450px;
+  height: 50px;
 }
 
-/* final meniu Mobile */
+  /* Mobil - ascundere What we do */
+  .second-container-3 {
+    display: none;
+  }
+
 
 }
 
@@ -1241,7 +1304,7 @@ button.js-open-menu > .icon-menu {
     padding-bottom: 21px;
     padding-left: 15px;
     padding-right: 15px;
-    gap: 114px;
+    gap: 62px;
   }
   
   /* ascundere meniul de la Mobile */
@@ -1260,14 +1323,19 @@ button.js-open-menu > .icon-menu {
   margin-top: 5px;
   width: 134px;
   height: 28px;
-}
+  }
 
-.container-2 {
+  .container-2 {
     flex-direction: column;
     align-items: baseline;
     justify-content: center;
     margin: 0;
     gap: 10px;
+  }
+
+  .email-address,
+  .phone-number {
+    font-size: 12px;
   }
 
   /* stilizarea cu sublinierea paginii curente (unde se află utilizatorul acum)*/
@@ -1305,6 +1373,77 @@ button.js-open-menu > .icon-menu {
   /* FINAL - stilizare cu sublinierea paginii curente */
   
   /* FINAL - meniul din bara */
+
+  /* Tablet - EFFECTIVE SOLUTIONS FOR YOUR BUSINESS section */
+
+  .first-section {
+    height: 400px;
+    background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/first-page-background-t.png");
+    
+  }
+
+  .hero-heading {
+    height: 84px;
+  }
+
+  .hero-heading h1 {
+    font-size: 26px;
+    line-height: 42px;
+  }
+
+  /* Tableta - redimensionare modal din butonul "Request our service" */
+  .modal-content {
+  width: 450px;
+  height: 609px;
+  }
+
+  .modal-form input {
+    width: 370px;
+  }
+
+  .comment-space {
+  width: 370px;
+  }
+
+  /* Tableta - pictogramele cu attention to details etc. */
+ .second-container-2 {
+  max-width: 768px;
+  height: 507px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  gap: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 94px;
+  margin-top: 94px;
+  
+ }
+
+ .sc-principal {
+  width: 354px;
+  height: 251px;
+ }
+ .advantage-icons {
+    width: 354px;
+  height: 120px;
+  
+  }
+
+  .sub-menu {
+  width: 354px;
+  height: 75px;
+  }
+
+  /* Tableta - ascundere What we do */
+  .second-container-3 {
+    display: none;
+  }
+
 }
 
 /* Stilizare pentru desktop */
@@ -1314,10 +1453,10 @@ button.js-open-menu > .icon-menu {
     padding-bottom: 25px;
     padding-left: 215px;
     padding-right: 215px;
-    gap: 339px;
+    gap: 50px;
   }
   
-/* ascundere meniul de la Mobile */
+  /* ascundere meniul de la Mobile */
   .js-open-menu {
     display: none;
   }
@@ -1330,15 +1469,20 @@ button.js-open-menu > .icon-menu {
    /* stilizare meniu cu dimensiunile specifice desktop-ului*/
   .logo {
   font-size: 26px;
- line-height: 1.9375em;
+  line-height: 1.9375em;
    width: 145px;
   height: 31px;
-}
-.container-2 {
+  }
+  .container-2 {
     align-items: center;
     justify-content: center;
     margin: 0;
-    gap: 10px;
+    gap: 40px;
+  }
+
+  .email-address,
+  .phone-number {
+    font-size: 14px;
   }
 
   /* stilizarea cu sublinierea paginii curente (unde se află utilizatorul acum)*/
@@ -1374,7 +1518,76 @@ button.js-open-menu > .icon-menu {
   }
   
   /* FINAL - stilizare cu sublinierea paginii curente */
+
+  /* Desktop - EFFECTIVE SOLUTIONS FOR YOUR BUSINESS section */
+
+  .first-section {
+    height: 600px;
+    background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/first-page-background-d.png");
+    
+  }
+
+  .hero-heading {
+   height: 120px;
+  }
+
+  .hero-heading h1 {
+    font-size: 44px;
+    line-height: 60px;
+  }
   
+
+  /* Desktop - redimensionare modal din butonul "Request our service" */
+  .modal-content {
+  width: 528px;
+  height: 581px;
+  }
+
+  .modal-form input {
+    width: 448px;
+  }
+
+  .comment-space {
+  width: 448px;
+  }
+
+/* Desktop - pictogramele cu attention to details etc. */
+
+.second-container-2 {
+  display: flex;
+  height: 251px;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 94px;
+  margin-top: 94px;
+  padding-left: 215px;
+  padding-right: 215px;
+  width: 1600px;
+  gap: 30px;
+
+}
+
+.sc-principal {
+  width: 270px;
+  height: 251px;
+  
+ }
+ .advantage-icons {
+  width: 270px;
+  height: 120px;
+  
+}
+.sub-menu {
+  width: 270px;
+  height: 75px;
+}
+
+
 }
 
 /* PORTOFOLIO section */
