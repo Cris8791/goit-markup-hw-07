@@ -1,0 +1,143 @@
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    padding-left: 215px;
+    
+  }
+  
+  /* sub-meniu: logo, studio, portofolio, contacts */
+  .container-1 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+  }
+  
+  .logo {
+    font-family: var(--logo-font-family);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.9375em;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: #000000;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .logo span:first-child {
+    color: #2196f3;
+  }
+  
+  .container-1 > .logo:hover,
+  .container-1 > .logo:focus {
+    color: var(--link-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .main-navigation {
+    display: flex;
+  
+    margin-top: 32px;
+    margin-bottom: 32px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .main-navigation li {
+    list-style: none;
+    display: flex;
+    margin-left: 32px;
+  }
+  .main-navigation .menu:hover,
+  .main-navigation .menu:focus {
+    color: var(--link-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* stilizarea cu sublinierea paginii curente (unde se află utilizatorul acum)*/
+  
+  .menu,
+  .active-link {
+    position: relative;
+    height: 100%;
+  }
+  
+  .menu:active::after,
+  .menu:focus::after {
+    content: "";
+    position: absolute;
+    bottom: -34px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--link-color);
+    border-radius: 2px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .active-link::after {
+    content: "";
+    position: absolute;
+    bottom: -34px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--link-color);
+    border-radius: 2px;
+  }
+  
+  /* FINAL - stilizare cu sublinierea paginii curente */
+  
+  /* sub-meniu - adresa de email si nr telefon */
+  .container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    gap: 40px;
+    height: 16px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+  .container-2a {
+    display: flex;
+    justify-content: space-between;
+    width: 161px;
+    height: 16px;
+    margin: 0px;
+  }
+  .container-2b {
+    display: flex;
+    justify-content: space-between;
+    width: 135px;
+    height: 16px;
+    margin: 0px;
+  }
+  .email-address svg {
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+  }
+  .phone-number svg {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+  }
+  .contact {
+    margin: 0px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .email-address,
+  .phone-number {
+    margin: 0;
+    color: var(--text-color);
+  }
+  
+  .contact span:first-child {
+    color: var(--text-color);
+  }
+  
+  .contact a:hover,
+  .contact a:focus {
+    color: var(--link-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
