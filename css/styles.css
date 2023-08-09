@@ -617,8 +617,9 @@ input.input-ckd:checked ~ .checked-icon {
 .third-container {
   display: flex;
   flex-direction: column;
-  width: 1600px;
-  height: 648px;
+  width: 100%;
+  /* width: 1600px; */
+  height: auto;
   margin-top: 150px;
   background: #f5f4fa;
 }
@@ -630,14 +631,7 @@ input.input-ckd:checked ~ .checked-icon {
 
 .section-team {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 1170;
-  height: 428;
-  margin-bottom: 32px;
-  margin-left: 215px;
-  width: 1170px;
-  height: 368px;
+  height: auto;
 }
 
 .all-our-team {
@@ -646,8 +640,6 @@ input.input-ckd:checked ~ .checked-icon {
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 270px;
-  height: 428px;
   border-radius: 0px, 0px, 4px, 4px;
 }
 
@@ -736,22 +728,16 @@ input.input-ckd:checked ~ .checked-icon {
 .fourth-container {
   display: flex;
   flex-direction: column;
-  width: 1170px;
-  height: 184px;
-  margin-left: 215px;
-  margin-top: 94px;
-  margin-bottom: 94px;
+ 
 }
 
 .regular-customers {
-  font-size: 36px;
+  
   font-weight: 700;
-  line-height: 2.625em;
   letter-spacing: 0.03em;
   text-align: center;
   color: var(--heading-color);
-  margin-top: 0px;
-  margin-bottom: 0px;
+  
 }
 
 .icons-fourth-container {
@@ -828,23 +814,10 @@ footer {
 .end-page {
   display: flex;
   justify-content: space-between;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  padding-left: 215px;
-  padding-right: 215px;
   width: 100%;
-  height: 251px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  gap: 70px;
   box-sizing: border-box;
 }
 
-.end-section {
-  width: 231px;
-  height: 131px;
-  gap: 28px;
-}
 
 .logo-footer {
   width: 145px;
@@ -864,9 +837,7 @@ footer {
   font-weight: 400;
   line-height: 1emx;
   letter-spacing: 0.03em;
-  text-align: left;
   color: #ffffff;
-  width: 231px;
   height: 72px;
 }
 
@@ -914,9 +885,8 @@ footer {
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 0.03em;
-  text-align: left;
   color: var(--contrast-color);
-  width: 100px;
+  width: 206px;
   height: 16px;
 }
 
@@ -970,15 +940,11 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 570px;
-  height: 86px;
-  margin-top: 8px;
-  padding: 0;
+  
 }
 
 .subscribe-form {
   display: flex;
-  gap: 12px;
   position: relative;
   box-sizing: border-box;
 }
@@ -988,11 +954,11 @@ footer {
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 0.03em;
-  text-align: left;
+  
 }
 
 .subscribe-form input {
-  width: 358px;
+  
   height: 50px;
   border-radius: 4px;
   border: 1px solid #ffffff4d;
@@ -1033,6 +999,7 @@ footer {
   padding-right: 0;
   margin: 0;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .icon-send {
@@ -1040,8 +1007,6 @@ footer {
   height: 24px;
   color: #fff;
   position: absolute;
-  transform: translateY(50%);
-  right: 43px;
   margin: 0;
 }
 
@@ -1292,6 +1257,130 @@ footer {
   .second-container-3 {
     display: none;
   }
+  /* Mobil - stilizare zona de Our Team */
+
+  .third-container {
+    height: 2761px;
+
+  }
+
+  .section-team {
+  width: 480px;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+  gap: 30px;
+  }
+
+  .all-our-team {
+  width: 450px;
+  height: 622px;
+  }
+
+  /* Mobil - REGULAR CUSTOMERS section */
+
+.fourth-container {
+  width: 480px;
+  height: 519px;
+  padding-left: 15px;
+  padding-right: 15px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 30px;
+  }
+
+  .regular-customers {
+  font-size: 28px;
+  line-height: 33px;
+  margin: 0;
+  
+  }
+
+  .icons-fourth-container {
+  
+  gap: 30px;
+  width: 450px;
+  height: 336px;
+  flex-wrap: wrap;
+  
+  }
+
+  .company-icons {
+  width: 210px;
+  height: 92px;
+  
+  
+  }
+
+  /* Mobil - stilizare footer */
+
+  .end-page {
+  width: 480px;
+  height: 604px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  gap: 60px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+  .end-section {
+  width: 232px;
+  height: 128px;
+  gap: 28px;
+  align-items: center;
+  }
+
+  .contacts-footer {
+  align-items: center;
+  width: 232px;
+  }
+
+  .end-section-1,
+  .end-section-2 {
+  text-align: center;
+  }
+
+  .social-contacts-text {
+    text-align: center;
+  }
+
+  .subscribe {
+  width: 450px;
+  height: 156px;
+  
+   
+  }
+
+  .subscribe-text {
+  text-align: center;
+  }
+
+  .subscribe-form {
+   gap: 20px;
+   flex-direction: column;
+   align-items: center;
+  
+  }
+
+  .subscribe-form input {
+    width: 450px;
+  }
+
+  .icon-send {
+  transform: translateY(342%);
+  right: 160px;
+  }
+
+
+
+
+
 
 
 }
@@ -1443,6 +1532,127 @@ footer {
   .second-container-3 {
     display: none;
   }
+  /* Tableta - stilizare zona de Our Team */
+
+  .third-container {
+    height: 1285px;
+
+  }
+
+  .section-team {
+  width: 768px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  gap: 30px;
+  }
+
+  .all-our-team {
+  width: 354px;
+  height: 536px;
+  }
+
+  /* Tableta - REGULAR CUSTOMERS section */
+
+  .fourth-container {
+  width: 738px;
+  height: 397px;
+  padding-left: 15px;
+  padding-right: 15px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .regular-customers {
+  font-size: 28px;
+  line-height: 33px;
+  
+  }
+
+  .icons-fourth-container {
+  
+  gap: 30px;
+  width: 738px;
+  height: 214px;
+  flex-wrap: wrap;
+  
+  }
+
+  .company-icons {
+  width: 226px;
+  height: 92px;
+  
+  }
+
+  /* Tableta - stilizare footer */
+
+  .end-page {
+  width: 768px;
+  height: 464px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 76px;
+  padding-right: 89px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  gap: 60px;
+  flex-wrap: wrap;
+  }
+
+  .end-section {
+  width: 232px;
+  height: 128px;
+  gap: 28px;
+  align-items: center;
+  }
+
+  .contacts-footer {
+  align-items: center;
+  width: 232px;
+  }
+
+  .end-section-1,
+  .end-section-2 {
+  text-align: center;
+  }
+
+  .social-contacts-text {
+    text-align: center;
+  }
+
+  .subscribe {
+  width: 450px;
+  height: 156px;
+  margin-left: 90px;
+   
+  }
+
+  .subscribe-text {
+  text-align: center;
+  }
+
+  .subscribe-form {
+   gap: 20px;
+   flex-direction: column;
+   align-items: center;
+  
+  }
+
+  .subscribe-form input {
+    width: 450px;
+  }
+
+  /* .email-sub {
+    width: 450px;
+    align-items: center;
+  } */
+
+  .icon-send {
+  transform: translateY(342%);
+  right: 160px;
+  }
 
 }
 
@@ -1586,6 +1796,114 @@ footer {
   width: 270px;
   height: 75px;
 }
+
+  /* Desktop - stilizare zona de Our Team */
+
+  .third-container {
+  height: 708px;
+
+  }
+  .section-team {
+  width: 1600px;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 215px;
+  padding-right: 215px;
+  }
+
+  .all-our-team {
+  width: 270px;
+  height: 428px;
+  }
+
+  /* Desktop - REGULAR CUSTOMERS section */
+
+  .fourth-container {
+  width: 1600px;
+  height: 372px;
+  padding-left: 215px;
+  padding-right: 215px;
+  padding-top: 94px;
+  padding-bottom: 94px;
+  }
+
+  .regular-customers {
+  font-size: 36px;
+  line-height: 2.625em;
+    
+
+  }
+
+  .icons-fourth-container {
+  gap: 30px;
+  width: 1170px;
+  height: 92px;
+  
+  }
+
+
+  .company-icons {
+  width: 170px;
+  height: 92px;
+  
+  }
+
+  /* Desktop - stilizare footer */
+
+  .end-page {
+  width: 1600px;
+  height: 251px;
+  padding: 60px 215px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  gap: 70px;
+  
+  }
+
+  .end-section {
+  width: 231px;
+  height: 131px;
+  gap: 28px;
+  }
+
+  .contacts-footer {
+  text-align: left;
+  width: 231px;
+  }
+
+  .end-section-1,
+  .end-section-2 {
+  text-align: left;
+  }
+
+  .social-contacts-text {
+    text-align: left;
+  }
+
+  .subscribe {
+  width: 570px;
+  height: 86px;
+  margin-top: 8px;
+  padding: 0;
+  }
+
+  .subscribe-text {
+  text-align: left;
+  }
+
+  .subscribe-form {
+   gap: 12px;
+  
+  }
+
+  .subscribe-form input {
+    width: 358px;
+  }
+
+  .icon-send {
+  transform: translateY(50%);
+  right: 43px;
+  }
 
 
 }
