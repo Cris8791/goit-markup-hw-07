@@ -1,1453 +1,2206 @@
 /* elemente generale */
 
 :root {
-    --link-color: #2196f3;
-    --heading-color: #212121;
-    --text-color: #757575;
-    --color-background: #2f303a;
-    --color-backgroung-buttons: #f5f4fa;
-    --contrast-color: #ffffff;
-    --social-icons-color: #afb1b8;
-    --text-font-family: "Roboto", arial, sans-serif;
-    --logo-font-family: "Raleway", arial, sans-serif;
-  }
-  
-  body {
-    font-family: "Roboto", Arial, sans-serif;
-    color: var(--heading-color);
-  }
-  
-  a {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1em;
-    letter-spacing: 0.02em;
-    text-align: left;
-    text-decoration: none;
-    color: var(--heading-color);
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    width: 100rem;
-  }
-  
-  .global-header p {
-    text-decoration: none;
-  }
-  
-  .header-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  /* meniul din bara */
-  
-  .header-content {
+  --link-color: #2196f3;
+  --heading-color: #212121;
+  --text-color: #757575;
+  --color-background: #2f303a;
+  --color-backgroung-buttons: #f5f4fa;
+  --contrast-color: #ffffff;
+  --social-icons-color: #afb1b8;
+  --text-font-family: "Roboto", arial, sans-serif;
+  --logo-font-family: "Raleway", arial, sans-serif;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  color: var(--heading-color);
+}
+
+a {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1em;
+  letter-spacing: 0.02em;
+  text-align: left;
+  text-decoration: none;
+  color: var(--heading-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1640px; /* Setez o lățime maximă pentru conținut */
+  margin: 0 auto; /* Aliniez conținutul la mijloc pe ecran */
+  padding: 20px; /* Adaug o mică margine în interior pentru a crea spațiu între conținut și marginea paginii */
+}
+
+.global-header p {
+  text-decoration: none;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* meniul din bara */
+
+/* sub-meniu: logo, studio, portofolio, contacts */
+.container-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 93px;
+}
+
+.logo {
+  font-family: var(--logo-font-family);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: #000000;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+   align-items: center;
+}
+
+.logo span:first-child {
+  color: #2196f3;
+}
+
+.container-1 > .logo:hover,
+.container-1 > .logo:focus {
+  color: var(--link-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-content {
     display: flex;
     justify-content: space-between;
+    height: 80px;
     width: 100%;
   }
   
-  
-  .logo {
-    font-family: var(--logo-font-family);
-    font-weight: 700;
-    text-align: left;
-    color: #000000;
+  .main-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
-  .logo span:first-child {
-    color: #2196f3;
+  .main-navigation li {
+    list-style: none;
+    display: flex;
+
   }
-  
-  .container-1 > .logo:hover,
-  .container-1 > .logo:focus {
+  .main-navigation .menu:hover,
+  .main-navigation .menu:focus {
     color: var(--link-color);
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   
-  
-  
-/* meniu varianta Mobile */
-
-@media (max-width: 767px) {
-  .header-content {
-    max-width: 480px;
-    /* width: 1600px; */
-    height: 60px;
-    padding-left: 15px;
-    padding-top: 16px;
- }
-
- .logo {
-    font-size: 24px;
-    line-height: 28px;
-    letter-spacing: 0.03em;
-    margin-top: 5px;
-    width: 134px;
-    height: 28px;
-  }
- .main-navigation {
-   display: none;
-  }
-  p.contact {
-    display: none;
-  }
-  button.js-open-menu {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 10px;
-    right: 15px;
-    border: none;
-    background-color: white;
-    cursor: pointer;
-  }
-  button.js-open-menu>.icon-menu {
-   display: inline;
-   position: absolute;
-   width: 24px;
-   height: 16px;
-   top: 22px;
-   right: 22px;
-   color: var(--heading-color); 
-   cursor: pointer;
-  }
-
-}      
-
-/* setare buton inchidere meniu si meniu - ascunse, cand nu e deschis meniul */
-.icon-close-menu {
-    display: none;
-}
-.mobile-menu {
-    display: none;
-}
-
-
-/* setare buton inchidere-cand meniul este deschis */
-.js-menu-container.is-open .js-close-menu>svg {
-    display: block;
-    position: absolute;
-  width: 18.67px;
-  height: 18.67px;
-  top: 21px;
-  right: 25.33px;
-  color: black; 
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  z-index: 2;
-}
-
-/* Ascund meniul-burger când meniul este deschis */
-.js-menu-container.is-open .icon-menu {
-    display: none; 
-}
-  
- /* Stilurile pentru meniul deschis */
-.js-menu-container.is-open .mobile-menu {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateX(0);
-    width: 100%;
-    height: 100%;
-    padding-top: 48px;
-    padding-bottom: 48px;
-    padding-left: 40px;
-    padding-right: 83px;
-    background-color: var(--color-backgroung-buttons);
-    z-index: 1;
-} 
-
-/* ----partea cu studio, portofolio,contacts */
-.mobile-sections {
+  /* sub-meniu - adresa de email si nr telefon */
+  .container-2 {
     display: flex;
-    flex-direction: column;
-    list-style: none;
-    gap: 32px;
-    padding: 0;
+    
+  }
+  .container-2a {
+    display: flex;
+    justify-content: space-between;
+    width: 161px;
+    height: 16px;
+    margin: 0px;
+  }
+  .container-2b {
+    display: flex;
+    justify-content: space-between;
+    width: 135px;
+    height: 16px;
+    margin: 0px;
+  }
+  .email-address svg {
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+  }
+  .phone-number svg {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+  }
+  .contact {
+    margin: 0px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .email-address,
+  .phone-number {
+    margin: 0;
+    color: var(--text-color);
+  }
+  
+  .contact span:first-child {
+    color: var(--text-color);
+  }
+  
+  .contact a:hover,
+  .contact a:focus {
+    color: var(--link-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+/* EFFECTIVE SOLUTIONS FOR YOUR BUSINESS section */
+
+.first-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: var(--color-background);
+  background-repeat: no-repeat; /* Evit repetarea imaginii */
+  background-size: cover; /* Redimensionez imaginea pentru a acoperi întregul container */
+  /* background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/first-page-background.jpg"); */
+
 }
 
-.mobile-sections li>a {
-font-family: Roboto;
-font-size: 40px;
-font-weight: 500;
-line-height: 47px;
-letter-spacing: 0.02em;
-text-align: left;
-color: var(--heading-color);
+.hero-heading {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
 }
 
-.mobile-sections li>a:hover,
-.mobile-sections li>a:focus {
+.hero-heading h1 {
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-align: center;
+  font-size: 44px;
+  
+  line-height: 1.2em;
+  
+}
+
+.hero-heading span {
+  display: block;
+  pointer-events: none;
+}
+
+/* butonul "Request our service" */
+.services {
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 50px;
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.08px;
+  background-color: var(--link-color);
+}
+
+/* modalul din butonul "Request our service" */
+
+.modal {
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  max-width: 1600px; /* pt ca proiectul are o latime de 1600px, deci mai mica decat fereastra web, am limitat latimea ferestrei modale la 1600px */
+  width: 100%; /* acum pot da ferestrei modale intreaga latime a ferestrei browserului */
+  z-index: 2; /* am setat z-index mai mare pentru a afișa conținutul modal peste fundal */
+  transition: 300ms ease, opacity 300ms ease; /*efect la inchiderea si deschiderea ferestrei */
+}
+
+.modal-backdrop {
+  position: fixed; /* in felul asta fundalul (.modal-backdrop) este atasat de fereastra de vizualizare si nu va defila odata cu continutul paginii. */
+  top: 0;
+  left: 0;
+  width: 100%; /*umple 100% din latimea ferestrei browserului si va fi fixat în ea*/
+  height: 100%; /*umple 100% din inaltimea ferestrei browserului si va fi fixat în ea*/
+  background: #00000033;
+  z-index: 3; /* am setat z-index mai mare decât cel al conținutului pentru a acoperi toata fereastra */
+}
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 40px;
+  position: absolute;
+  top: 50%; /* Am setat top-ul la 50% pt centrare pe verticala */
+  left: 50%; /* Am setat left-ul la 50% pentru centrare pe orizontala */
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.is-hidden {
+  visibility: hidden;
+  transform: scale(1.1);
+  opacity: 0;
+}
+
+.close-btn {
+  width: 30px;
+  height: 30px;
+  right: 8px;
+  top: 8px;
+  border-radius: 50%;
+  position: absolute;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #000;
+  cursor: pointer;
+  display: flex; /*am pus flex cu centrarile aferente, ca sa centrez svg-ul din close-btn */
+  justify-content: center;
+  align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-btn:focus,
+.close-btn:hover {
+  transform: scale(1.2);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* final modal */
+
+/* formularul din modal */
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 448px;
+  height: 342px;
+}
+
+.form-group {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: var(--text-color);
+}
+
+.modal-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative; /*pt a ma asigura că pot pozitiona SVG-urile relative la etichete */
+}
+
+/* stilizez casuta efectiva de input */
+.modal-form input {
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #21212133;
+  padding-left: 42px;
+}
+
+/* pozitionez zona de svg */
+.modal-form .input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* pozitionez si stilizez svg-ul */
+.modal-form .input-icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  color: var(--heading-color);
+  outline: none;
+  left: 12px;
+  top: -48px;
+  transform: translateY(80%); /* ajustez poziția verticală */
+}
+
+/* stilizez borderul inputului la focus  */
+.modal-form .input:focus {
+  border: 1px solid var(--link-color);
+  outline: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* stilizez SVG-ul la focus*/
+.form-group:focus-within .input-icon {
   color: var(--link-color);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ----partea cu telefonul si email-ul */
-.mobile-menu-contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    list-style: none;
-    padding: 0;
-    margin-top: 306px;
+/* sub-sectiunea de comments */
+.comment-space {
+  height: 120px;
+  border: 1px solid #21212133;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
 }
 
-.mobile-tel {
-    width: 273px;
-    height: 40px;
+.modal-form .input::placeholder {
+  color: #75757580;
 }
 
-.mobile-menu-contacts .mobile-tel>a {
-    font-family: Roboto;
-    font-size: 34px;
-    font-weight: 500;
-    line-height: 40px;
-    letter-spacing: 0.02em;
-    text-align: left;
-    color: var(--link-color);
+.comment-space {
+  resize: none;
+}
+
+/* sectiunea cu acceptarea termenilor si conditiilor + butonul de send */
+.end-modal {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  gap: 30px;
+}
+
+/* stilizare svg in loc de checkbox-ul implicit de la acceptare termeni si conditii */
+/* -- ascund caseta checkbox implicită */
+.agreement-text input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  top: 16px;
+  left: 0;
+}
+
+/* --stabilesc caracteristicile zonei in care am casuta+textul */
+.agreement-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  width: 419px;
+  height: 24px;
+  color: var(--text-color);
+  display: inline-block;
+  position: relative; /* asta este pentru pozitionarea svg-urilor - casutele bifat/nebifat, dar si a textului*/
+  padding-left: 52px;
+}
+
+/* --pozitionarea si stilizarea textului */
+.agreement-text .agreement-text-1 {
+  position: absolute;
+  top: 0;
+  left: 24px;
+}
+
+.agreement-text a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+/* --stilizez si pozitionez svg-ul unchecked-icon */
+.unchecked-icon {
+  color: var(--heading-color);
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer; /* Stilizez cursorul pentru zona casetei */
+}
+
+/* --stilizez si pozitionez SVG-ul checkbox completat */
+.checked-icon {
+  display: none;
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* --cand valoarea inputului este checked, svg-ul unchecked dispare */
+input.input-ckd:checked ~ .unchecked-icon {
+  display: none;
+}
+
+/* --cand valoarea inputului este checked, svg-ul checkedicon devine inline-block */
+input.input-ckd:checked ~ .checked-icon {
+  display: inline-block;
+}
+
+/* FINAL - stilizare svg in loc de checkbox-ul implicit de la acceptare termeni si conditii */
+
+.send-btn {
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 50px;
+  background-color: var(--link-color);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto; /* aliniez butonul pe mijloc orizontal în container */
+  display: block; /* Asigură că butonul ocupă întreaga lățime disponibilă în container */
+}
+
+.send-btn-ctn {
+  display: flex;
+  justify-content: center; /* Aliniere orizontală pe mijloc */
+  align-items: center; /* Aliniere verticală pe mijloc */
+  height: 100%; /* Înălțimea containerului ocupă întreaga înălțime a modalului */
+}
+
+/* FINAL - formularul din modal */
+
+/* FINAL - EFFECTIVE SOLUTIONS FOR YOUR BUSINESS section */
+
+/* pictogramele cu attention to details etc. */
+
+.second-container-2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.advantage-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 270px; */
+  /* height: 120px; */
+  border-radius: 4px;
+  background: #f5f4fa;
+}
+.second-section {
+  /* margin-top: 30px; */
+}
+
+.second-section > .menu-item {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1em;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: var(--heading-color);
+  padding-top: 30px;
+  padding-bottom: 10px;
+  /* height: 16px; */
+  margin: 0;
+  display: flex;
+}
+
+.second-section > .sub-menu {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: 0.03em;
+  color: var(--text-color);
+}
+
+.sub-menu {
+  width: 354px;
+  height: 75px;
+  width: 100%;
+  margin: 0;
+  /* margin-right: 0; */
+  text-align: left;
+
+}
+/* FINAL - pictogramele cu attention to details etc. */
+
+/* WHAT WE DO section */
+
+.second-container-3 {
+  display: flex;
+  flex-direction: column;
+  /* width: 1170px; */
+  /* height: 386px; */
+  /* margin-left: 215px; */
+  width: 100%;
+  height: auto;
+  padding-left: 215px;
+  padding-right: 215px;
+}
+
+.second-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 2.625em;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: var(--heading-color);
+}
+
+.second-title-1 {
+  /* text-align: center; */
+  /* margin-bottom: 32px; */
+  /* width: 1170px; */
+}
+
+.pictures-1 {
+  display: flex;
+  /* margin-bottom: 32px; */
+  align-items: center;
+  justify-content: space-between;
+  /* width: 1170px; */
+  /* height: 294px; */
+  width: 100%;
+  height: auto;
+}
+
+/* banners from WHAT WE DO */
+
+.moto-cards {
+  display: flex;
+  gap: 30px;
+  padding: 0px;
+  width: 100%;
+}
+
+.motto-cards-elements {
+  position: relative;
+  list-style: none;
+  display: flex;
+  /* width: 370px; */
+  /* height: 294px; */
+  flex-basis: calc(33.33% - 20px);
+
+}
+
+.motto-cards-elements>img {
+  width: auto; /* Pentru a păstra proporțiile originale ale imaginii */
+  height: auto; /* Pentru a păstra proporțiile originale ale imaginii */
+  max-width: 100%; /* Asigură că imaginea nu depășește lățimea containerului */
+  max-height: 100%; /* Asigură că imaginea nu depășește înălțimea containerului */
+}
+
+.overlay-text {
+  background-color: grey;
+  position: absolute;
+  bottom: 0;
+  /* width: 370px; */
+  height: 70px;
+  width: 100%;
+  /* height: auto; */
+  background: #2f303acc;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.overlay-text-1 {
+  height: 16px;
+  margin: 0px;
+}
+/* FINAL - banners from WHAT WE DO */
+/* FINAL - WHAT WE DO section */
+
+/* OUR TEAM section */
+
+.third-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  background: #f5f4fa;
+}
+
+.second-title-2 {
+  text-align: center;
+  padding-bottom: 30px;
+  margin: 0;
+}
+
+.section-team {
+  display: flex;
+  height: auto;
+  width: 100%;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.all-our-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-radius: 0px 0px 4px 4px;
+   flex-grow: 1;
+}
+
+.our-team {
+  /* height: 48px; */
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  
+  }
+
+.our-team img {
+  margin-right: 24px;
+}
+.our-team-1 {
+  height: 19px;
+  width: 100%;
+}
+.our-team-2 {
+  height: 19px;
+  width: 100%;
+}
+.our-team-1 {
+  /* margin-bottom: 10px; */
+}
+
+.our-team > .our-team-1 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1875em;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: var(--heading-color);
+}
+
+.our-team > .our-team-2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.1875em;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: var(--text-color);
+  font-style: normal;
+}
+
+.icons-team {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  /* width: 206px; */
+  width: 100%;
+  /* height: 44px; */
+  padding-top: 16px;
+  padding-bottom: 24px;
+  margin: 0;
+  box-sizing: border-box;
+  padding-left: 0;
+    padding-right: 0;
+  
+}
+.icons-team li {
+  list-style: none;
+  display: flex;
+}
+
+.socials-icons {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #ffffff1a;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.socials-icons:hover,
+.socials-icons:focus {
+  background: var(--link-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.socials-icons:hover svg,
+.socials-icons:focus svg {
+  color: var(--contrast-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.socials-icons svg {
+  width: 20px;
+  height: 20px;
+  color: var(--social-icons-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* FINAL - OUR TEAM section */
+
+/* REGULAR CUSTOMERS section */
+.fourth-container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.regular-customers {
+  
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: var(--heading-color);
+  
+}
+
+.icons-fourth-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 1170px;
+  height: 92px;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.icons-fourth-container li {
+  list-style: none;
+  display: flex;
+  border: 0px;
+  flex-grow: 1; /* Elementele se vor extinde pe lățimea disponibilă */
+}
+
+.company-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 170px; */
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  color: var(--social-icons-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.company-icons:hover,
+.company-icons:focus {
+  color: var(--link-color);
+  border-color: var(--link-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* fiecare svg avea dimensiuni diferite */
+
+
+
+ 
+/* FINAL - REGULAR CUSTOMERS section */
+
+/* FOOTER */
+
+footer {
+  background-color: var(--color-background);
+  color: #ffffff;
+}
+
+.end-page {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.logo-footer {
+  width: 145px;
+  height: 31px;
+}
+
+.end-section .logo {
+  color: #ffffff;
+}
+
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1emx;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  height: 72px;
+}
+
+.end-section .end-section-1 {
+  width: 207px;
+  margin: 0;
+}
+
+.contacts-footer .end-section-2 {
+  width: 231px;
+  color: #fff;
+  opacity: 60%;
+}
+
+.end-section-1,
+.end-section-2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1emx;
+  letter-spacing: 0.03em;
+  text-align: left;
+  height: 16px;
+}
+
+.end-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+/* "Find us on" sub-section */
+.social-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 206px;
+  height: 80px;
+  margin-top: 12px;
+  gap: 20px;
+}
+.social-contacts-text {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: var(--contrast-color);
+  width: 206px;
+  height: 16px;
+}
+
+.social-contacts-text p {
+  margin: 0;
+}
+.social-contacts-icons {
+  display: flex;
+  width: 206px;
+  height: 44px;
+  justify-content: space-between;
+}
+.social-contacts-icons .social-contacts-icons1 {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 22px;
+  background: #ffffff1a;
+  color: var(--contrast-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-contacts-icons .social-contacts-icons1:hover,
+.social-contacts-icons .social-contacts-icons1:focus {
+  background-color: var(--link-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-contacts-icons .social-contacts-icons1 svg {
+  width: 20px;
+  height: 20px;
+}
+
+.address1 {
+  width: 207px;
+  height: 16px;
+}
+.address2 {
+  width: 231px;
+  height: 16px;
+}
+.address3 {
+  width: 231px;
+  height: 16px;
+}
+/* FINAL - "Find us on" sub-section */
+
+/* Subscribe to the newsletter - section */
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+
+.subscribe-form {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.subscribe-text {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  
+}
+
+.subscribe-form input {
+  
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid #ffffff4d;
+  padding-left: 16px;
+  background-color: var(--color-background);
+  outline: none;
+  box-sizing: border-box;
+}
+
+
+.subscribe-form .input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: #ffffff99;
+}
+.first-sub-btn {
+  box-sizing: border-box;
+  display: flex;
+  width: 200px;
+  height: 50px;
+  position: relative;
+}
+
+.subscribe-btn {
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 50px;
+  background-color: var(--link-color);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+  text-align: left;
+  padding-left: 43px;
+  padding-right: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.icon-send {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  position: absolute;
+  margin: 0;
+  transform: translateY(50%);
+  right: 40px;
+}
+
+
+/* FINAL - subscribe to the newsletter - section */
+/* FINAL FOOTER */
+
+/* Stilizare pentru mobil */
+@media screen and (max-width: 767px) {
+  .header-content {
+  height: 60px;
+  padding-left: 15px;
+  padding-top: 16px;
+  }
+
+  .logo {
+  font-size: 24px;
+  line-height: 28px;
+
+  margin-top: 5px;
+  width: 134px;
+  height: 28px;
+  }
+  .main-navigation {
+  display: none;
+  }
+  .container-2 {
+  display: none;
+  }
+
+  
+  button.js-open-menu {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  }
+  button.js-open-menu > .icon-menu {
+  display: inline;
+  position: absolute;
+  width: 24px;
+  height: 16px;
+  top: 40px;
+  right: 22px;
+  color: var(--heading-color);
+  cursor: pointer;
+  }
+
+  /* setare buton inchidere meniu si meniu - ascunse, cand nu e deschis meniul */
+  .icon-close-menu {
+  display: none;
+  }
+  .mobile-menu {
+  display: none;
+  }
+
+  /* setare buton inchidere-cand meniul este deschis */
+  .js-menu-container.is-open .js-close-menu > svg {
+  display: block;
+  position: absolute;
+  width: 18.67px;
+  height: 18.67px;
+  top: 21px;
+  right: 25.33px;
+  color: black;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  z-index: 2;
+  }
+
+  /* Ascund meniul-burger când meniul este deschis */
+  .js-menu-container.is-open .icon-menu {
+  display: none;
+  }
+
+  /* Stilurile pentru meniul deschis */
+  .js-menu-container.is-open .mobile-menu {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(0);
+  width: 100%;
+  height: 100%;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-left: 40px;
+  padding-right: 83px;
+  background-color: var(--color-backgroung-buttons);
+  z-index: 1;
+  }
+
+  /* ----partea cu studio, portofolio,contacts */
+  .mobile-sections {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 32px;
+  padding: 0;
+  }
+
+  .mobile-sections li > a {
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 47px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--heading-color);
+  }
+
+  .mobile-sections li > a:hover,
+  .mobile-sections li > a:focus {
+  color: var(--link-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ----partea cu telefonul si email-ul */
+  .mobile-menu-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin-top: 306px;
+  }
+
+  .mobile-tel {
+  width: 273px;
+  height: 40px;
+  }
+
+  .mobile-menu-contacts .mobile-tel > a {
+  font-family: Roboto;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--link-color);
+  }
+
+  .mobile-email {
+  width: 231px;
+  height: 28px;
+  }
+
+  .mobile-menu-contacts .mobile-email > a {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--text-color);
+  }
+
+  /* ----linkurile catre adresele din retelele de socializare */
+  .socials-mobile {
+  display: flex;
+  list-style: none;
+  width: 357px;
+  height: 22px;
+  border: 1px none;
+  padding: 0;
+  margin-top: 64px;
+  justify-content: space-between;
+  }
+
+  .socials-mobile li > a {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--link-color);
+  }
+
+  /* final meniu Mobile */
+
+  /* Mobile - EFFECTIVE SOLUTIONS FOR YOUR BUSINESS section */
+
+  .first-section {
+    height: 400px;
+    background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/first-page-background-m.png"),
+    url("../images/first-page-background-m-2x.png");
+  }
+
+  .hero-heading {
+    height: 84px;
+  }
+
+  .hero-heading h1 {
+    font-size: 26px;
+    line-height: 42px;
+  }
+
+  /* Mobil - redimensionare modal din butonul "Request our service" */
+  .modal-content {
+  width: 450px;
+  height: 609px;
+  }
+
+  .modal-form input {
+    width: 370px;
+  }
+
+  .comment-space {
+  width: 370px;
+  }
+
+
+/* Mobil - pictogramele cu attention to details etc. */
+ .second-container-2 {
+  max-width: 100%;
+  /* height: 994px; */
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 94px;
+  margin-top: 94px;
+  
+ }
+
+ .sc-principal {
+  width: 100%;
+  /* height: 226px; */
+ }
+ .advantage-icons {
+    /* width: 450px; */
+  /* height: 120px; */
+  width: 100%;
+  padding: 25px 42.74%;
+  
+  }
+
+  .menu-item {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sub-menu {
+  /* width: 450px; */
+  /* height: 50px; */
+  width: 100%;
+}
+
+  /* Mobil - ascundere What we do */
+  .second-container-3 {
+    display: none;
+  }
+  /* Mobil - stilizare zona de Our Team */
+
+  .third-container {
+    padding: 60px 15px;
+  }
+
+  .section-team {
+  flex-direction: column;
+  justify-content: center;
+  }
+
+  .all-our-team {
+  width: 100%;
+  height: auto;
+  }
+
+  .icons-team {
+    padding-left: 27.11%;
+    padding-right: 27.11%;
+  }
+
+  /* Mobil - REGULAR CUSTOMERS section */
+
+.fourth-container {
+  
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 30px;
+  }
+
+  .regular-customers {
+  font-size: 28px;
+  line-height: 33px;
+  margin: 0;
+  
+  }
+
+  .icons-fourth-container {
+  gap: 30px;
+  /* width: 450px; */
+  /* height: 336px; */
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  margin: 0;
+  
+  }
+  .icons-fourth-container li {
+    flex-basis: calc((100% - 30px) / 2); 
     
+  }
+
+  .company-icons {
+  /* width: 210px; */
+  /* width: 46%; */
+  /* height: 92px; */
+  /* flex-basis: calc(50% - 15px-2); */
+  /* padding: 16px 52px; */
+  padding-top: 16px;
+  padding-bottom: 16px;
+  flex-grow: 1;
+  
+  
+  }
+
+  
+
+  /* Mobil - stilizare footer */
+
+  .end-page {
+  /* width: 480px; */
+  /* height: 604px; */
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  gap: 60px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+  .end-section {
+  width: 232px;
+  height: 128px;
+  gap: 28px;
+  align-items: center;
+  }
+
+  .contacts-footer {
+  align-items: center;
+  width: 232px;
+  }
+
+  .end-section-1,
+  .end-section-2 {
+  text-align: center;
+  }
+
+  .social-contacts-text {
+    text-align: center;
+  }
+
+  .subscribe {
+  /* width: 450px; */
+  width: 100%;
+  height: 156px;
+  
+   
+  }
+
+  .subscribe-text {
+  text-align: center;
+  }
+
+  .subscribe-form {
+   gap: 20px;
+   flex-direction: column;
+   align-items: center;
+  
+  }
+  
+  .email-sub {
+    width: 100%;
+  }
+  .subscribe-form input {
+    /* width: 450px; */
+    width: 100%;
+  }
+
+  
+
+
+
+
+
+
+
 }
-
-.mobile-email {
-    width: 231px;
-    height: 28px;
-}
-
-.mobile-menu-contacts .mobile-email>a {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 28px;
-    letter-spacing: 0.02em;
-    text-align: left;
-    color: var(--text-color);
-}
-
-/* ----linkurile catre adresele din retelele de socializare */
-.socials-mobile {
-    display: flex;
-    list-style: none;
-    width: 357px;
-    height: 22px;
-    border: 1px none;
-    padding: 0;
-    margin-top: 64px;
-    justify-content: space-between;
-}
-
-.socials-mobile li>a {
-    font-family: Roboto;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 22px;
-    letter-spacing: 0.02em;
-    text-align: left;
-    color: var(--link-color);
-}
-
-/* final meniu Mobile */
-
 
 /* Stilizare pentru tableta */
 @media screen and (min-width: 768px) and (max-width: 1157px) {
-    /* intai ascundem meniul din varianta Mobile */
-    .menu-container {
-        display: none;
-    }
-
-    button.js-open-menu {
-        display: none;
-     }
-     
-    .icon-menu svg {
-        display: none;
-    }
-    /* stilizarea zonei din meniu - studio, portofolio, contact*/
-    .header-content {
-        max-width: 768px;
-        /* width: 1600px; */
-        padding-left: 15px;
-        padding-bottom: 21px;
-        gap: 114px;
-        
-     }
-    
-    .logo {
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 28px;
-        letter-spacing: 0.03em;
-        margin-top: 5px;
-        width: 134px;
-        height: 28px;
-    }
-
-    @import url('./styles-t-d.css');
-
-    .container-2 {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-        justify-content: space-between;
-        margin: 0;
-        gap: 10px;
-        
-       
-      
-    }
-}
- 
-
-/* Stilizare pentru desktop */
-@media (min-width: 1157px) {
-    .menu-container {
-        display: none;
-    }
-
-    button.js-open-menu {
-        display: none;
-     }
-     
-    .icon-menu svg {
-        display: none;
-    }
-    /* stilizarea zonei din meniu - studio, portofolio, contact*/
-    .header-content {
-        max-width: 1600px;
-        /* width: 1600px; */
-        padding-left: 215px;
-        padding-top: 24px;
-        padding-bottom: 25px;
-        padding-right: 215px;
-       gap: 339px;
-     }
-
-     .logo {
-        font-size: 26px;
-        line-height: 1.9375em;
-        letter-spacing: 0.03em;
-        width: 145px;
-        height: 31px;
-    }
-    @import url('./styles-t-d.css');
-
-    .container-2 {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 0;
-        gap: 40px;
-        height: 16px;
-        margin-top: 32px;
-        margin-bottom: 32px;
-    }
-
-}
-
-
-
-
-/* FINAL - meniul din bara */
-
-/* FINAL - meniul din bara */
   
-/* EFFECTIVE SOLUTIONS FOR YOUR BUSINESS section */
+  .header-content {
+    padding-top: 21px;
+    padding-bottom: 21px;
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 62px;
+  }
   
-  .first-section {
-    text-align: center;
-    display: flex;
+  /* ascundere meniul de la Mobile */
+  .js-open-menu {
+    display: none;
+  }
+
+  .menu-container {
+    display: none;
+  }
+  
+  /* stilizare meniu cu dimensiunile specifice tabletei*/
+  .logo {
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 5px;
+  width: 134px;
+  height: 28px;
+  }
+
+  .container-2 {
     flex-direction: column;
+    align-items: baseline;
     justify-content: center;
-    align-items: center;
-    width: 1600px;
-    height: 600px;
-    background: var(--color-background);
-    background-image: linear-gradient(
-        rgba(47, 48, 58, 0.4),
-        rgba(47, 48, 58, 0.4)
-      ),
-      url("../images/first-page-background.jpg");
+    margin: 0;
+    gap: 10px;
   }
-  
-  .hero-heading {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 696px;
-    height: 120px;
-  }
-  
-  .hero-heading h1 {
-    color: #ffffff;
-  
-    font-size: 44px;
-    font-weight: 900;
-    line-height: 1.2em;
-    letter-spacing: 0.06em;
-    text-align: center;
-  }
-  
-  .hero-heading span {
-    display: block;
-    pointer-events: none;
-  }
-  
-  /* butonul "Request our service" */
-  .services {
-    border: none;
-    border-radius: 4px;
-    width: 200px;
-    height: 50px;
-    margin-top: 20px;
-    color: #ffffff;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1.08px;
-    background-color: var(--link-color);
-  }
-  
-  /* modalul din butonul "Request our service" */
-  
-  .modal {
-    position: fixed;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: auto;
-    max-width: 1600px; /* pt ca proiectul are o latime de 1600px, deci mai mica decat fereastra web, am limitat latimea ferestrei modale la 1600px */
-    width: 100%; /* acum pot da ferestrei modale intreaga latime a ferestrei browserului */
-    z-index: 2; /* am setat z-index mai mare pentru a afișa conținutul modal peste fundal */
-    transition: 300ms ease, opacity 300ms ease; /*efect la inchiderea si deschiderea ferestrei */
-  }
-  
-  .modal-backdrop {
-    position: fixed; /* in felul asta fundalul (.modal-backdrop) este atasat de fereastra de vizualizare si nu va defila odata cu continutul paginii. */
-    top: 0;
-    left: 0;
-    width: 100%; /*umple 100% din latimea ferestrei browserului si va fi fixat în ea*/
-    height: 100%; /*umple 100% din inaltimea ferestrei browserului si va fi fixat în ea*/
-    background: #00000033;
-    z-index: 3; /* am setat z-index mai mare decât cel al conținutului pentru a acoperi toata fereastra */
-  }
-  .modal-content {
-    background-color: #ffffff;
-    width: 528px;
-    height: 581px;
-    border-radius: 4px;
-    padding: 40px;
-    position: absolute;
-    top: 50%; /* Am setat top-ul la 50% pt centrare pe verticala */
-    left: 50%; /* Am setat left-ul la 50% pentru centrare pe orizontala */
-    transform: translate(-50%, -50%);
-    z-index: 4;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  
-  .is-hidden {
-    visibility: hidden;
-    transform: scale(1.1);
-    opacity: 0;
-  }
-  
-  .close-btn {
-    width: 30px;
-    height: 30px;
-    right: 8px;
-    top: 8px;
-    border-radius: 50%;
-    position: absolute;
-    background: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #000;
-    cursor: pointer;
-    display: flex; /*am pus flex cu centrarile aferente, ca sa centrez svg-ul din close-btn */
-    justify-content: center;
-    align-items: center;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .close-btn:focus,
-  .close-btn:hover {
-    transform: scale(1.2);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* final modal */
-  
-  /* formularul din modal */
-  
-  .modal-body {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .modal-title {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 23px;
-    letter-spacing: 0.03em;
-    text-align: center;
-  }
-  
-  .modal-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 448px;
-    height: 342px;
-  }
-  
-  .form-group {
+
+  .email-address,
+  .phone-number {
     font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: 0.01em;
-    text-align: left;
-    color: var(--text-color);
   }
+
+  /* stilizarea cu sublinierea paginii curente (unde se află utilizatorul acum)*/
   
-  .modal-form label {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    position: relative; /*pt a ma asigura că pot pozitiona SVG-urile relative la etichete */
-  }
-  
-  /* stilizez casuta efectiva de input */
-  .modal-form input {
-    width: 448px;
-    height: 40px;
-    border-radius: 4px;
-    border: 1px solid #21212133;
-    padding-left: 42px;
-  }
-  
-  /* pozitionez zona de svg */
-  .modal-form .input-with-icon {
+  .menu,
+  .active-link {
     position: relative;
-    display: flex;
-    align-items: center;
+    height: 100%;
   }
   
-  /* pozitionez si stilizez svg-ul */
-  .modal-form .input-icon {
+  .menu:active::after,
+  .menu:focus::after {
+    content: "";
     position: absolute;
-    width: 18px;
-    height: 18px;
-    color: var(--heading-color);
-    outline: none;
-    left: 12px;
-    top: -48px;
-    transform: translateY(80%); /* ajustez poziția verticală */
-  }
-  
-  /* stilizez borderul inputului la focus  */
-  .modal-form .input:focus {
-    border: 1px solid var(--link-color);
-    outline: none;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* stilizez SVG-ul la focus*/
-  .form-group:focus-within .input-icon {
-    color: var(--link-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* sub-sectiunea de comments */
-  .comment-space {
-    width: 448px;
-    height: 120px;
-    border: 1px solid #21212133;
-    border-radius: 4px;
-    padding-left: 16px;
-    padding-top: 12px;
-    padding-right: 16px;
-    padding-bottom: 12px;
-  }
-  
-  .modal-form .input::placeholder {
-    color: #75757580;
-  }
-  
-  .comment-space {
-    resize: none;
-  }
-  
-  /* sectiunea cu acceptarea termenilor si conditiilor + butonul de send */
-  .end-modal {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    gap: 30px;
-  }
-  
-  /* stilizare svg in loc de checkbox-ul implicit de la acceptare termeni si conditii */
-  /* -- ascund caseta checkbox implicită */
-  .agreement-text input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-    top: 16px;
-    left: 0;
-  }
-  
-  /* --stabilesc caracteristicile zonei in care am casuta+textul */
-  .agreement-text {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.03em;
-    text-align: left;
-    width: 419px;
-    height: 24px;
-    color: var(--text-color);
-    display: inline-block;
-    position: relative; /* asta este pentru pozitionarea svg-urilor - casutele bifat/nebifat, dar si a textului*/
-    padding-left: 52px;
-  }
-  
-  /* --pozitionarea si stilizarea textului */
-  .agreement-text .agreement-text-1 {
-    position: absolute;
-    top: 0;
-    left: 24px;
-  }
-  
-  .agreement-text a {
-    color: var(--link-color);
-    text-decoration: underline;
-  }
-  
-  /* --stilizez si pozitionez svg-ul unchecked-icon */
-  .unchecked-icon {
-    color: var(--heading-color);
-    position: absolute;
-    top: 16px;
+    bottom: -34px;
     left: 0;
     width: 100%;
-    height: 100%;
-    cursor: pointer; /* Stilizez cursorul pentru zona casetei */
-  }
-  
-  /* --stilizez si pozitionez SVG-ul checkbox completat */
-  .checked-icon {
-    display: none;
-    position: absolute;
-    top: 16px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-  }
-  
-  /* --cand valoarea inputului este checked, svg-ul unchecked dispare */
-  input.input-ckd:checked ~ .unchecked-icon {
-    display: none;
-  }
-  
-  /* --cand valoarea inputului este checked, svg-ul checkedicon devine inline-block */
-  input.input-ckd:checked ~ .checked-icon {
-    display: inline-block;
-  }
-  
-  /* FINAL - stilizare svg in loc de checkbox-ul implicit de la acceptare termeni si conditii */
-  
-  .send-btn {
-    border: none;
-    border-radius: 4px;
-    width: 200px;
-    height: 50px;
+    height: 4px;
     background-color: var(--link-color);
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 30px;
-    letter-spacing: 0.06em;
-    text-align: center;
-    margin: 0 auto; /* aliniez butonul pe mijloc orizontal în container */
-    display: block; /* Asigură că butonul ocupă întreaga lățime disponibilă în container */
+    border-radius: 2px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .send-btn-ctn {
-    display: flex;
-    justify-content: center; /* Aliniere orizontală pe mijloc */
-    align-items: center; /* Aliniere verticală pe mijloc */
-    height: 100%; /* Înălțimea containerului ocupă întreaga înălțime a modalului */
+  .active-link::after {
+    content: "";
+    position: absolute;
+    bottom: -34px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--link-color);
+    border-radius: 2px;
   }
   
-  /* FINAL - formularul din modal */
+  /* FINAL - stilizare cu sublinierea paginii curente */
   
-  /* FINAL - EFFECTIVE SOLUTIONS FOR YOUR BUSINESS section */
-  
-  /* pictogramele cu attention to details etc. */
-  
-  .second-container-2 {
-    display: flex;
-    width: 1170px;
-    height: 251px;
-    align-items: center;
-    justify-content: space-between;
-    top: 774px;
-    margin-bottom: 94px;
-    margin-top: 94px;
-    margin-left: 215px;
-    margin-right: 215px;
+  /* FINAL - meniul din bara */
+
+  /* Tablet - EFFECTIVE SOLUTIONS FOR YOUR BUSINESS section */
+
+  .first-section {
+    height: 400px;
+    background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/first-page-background-t.png"),
+    url("../images/first-page-background-t-2x.png");
+    
   }
+
+  .hero-heading {
+    height: 84px;
+  }
+
+  .hero-heading h1 {
+    font-size: 26px;
+    line-height: 42px;
+  }
+
+  /* Tableta - redimensionare modal din butonul "Request our service" */
+  .modal-content {
+  width: 450px;
+  height: 609px;
+  }
+
+  .modal-form input {
+    width: 370px;
+  }
+
+  .comment-space {
+  width: 370px;
+  }
+
+  /* Tableta - pictogramele cu attention to details etc. */
+ .second-container-2 {
+  /* max-width: 768px; */
+  width: 100%;
+  /* height: 507px; */
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  gap: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 94px;
+  margin-top: 94px;
   
-  .advantage-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 270px;
-    height: 120px;
-    border-radius: 4px;
-    background: #f5f4fa;
-  }
-  .second-section {
-    margin-top: 30px;
-  }
+ }
+
+ .sc-principal {
+  /* width: 354px; */
+  /* height: 251px; */
+  flex-basis: calc(50% - 15px);
+  flex-grow: 1; 
+ }
+ .advantage-icons {
+    /* width: 354px; */
+  /* height: 120px; */
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
   
-  .second-section > .menu-item {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1em;
-    letter-spacing: 0.03em;
-    text-align: left;
-    color: var(--heading-color);
   }
-  
-  .second-section > .sub-menu {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5em;
-    letter-spacing: 0.03em;
-    text-align: left;
-    color: var(--text-color);
-  }
-  
-  .menu-item {
-    margin-bottom: 10px;
-    height: 16px;
-    margin-top: 30px;
-  }
+
   
   .sub-menu {
-    width: 270px;
-    height: 75px;
-    margin: 0px;
+  /* width: 354px; */
+  /* height: 75px; */
+  width: 100%;
   }
-  /* FINAL - pictogramele cu attention to details etc. */
-  
-  /* WHAT WE DO section */
-  
+
+  /* Tableta - ascundere What we do */
   .second-container-3 {
-    display: flex;
-    flex-direction: column;
-    width: 1170px;
-    height: 386px;
-    margin-left: 215px;
+    display: none;
   }
-  
-  .second-title {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 2.625em;
-    letter-spacing: 0.03em;
-    text-align: center;
-    color: var(--heading-color);
-  }
-  
-  .second-title-1 {
-    text-align: center;
-    margin-bottom: 32px;
-    width: 1170px;
-  }
-  
-  .pictures-1 {
-    display: flex;
-    margin-bottom: 32px;
-    align-items: center;
-    justify-content: space-between;
-    width: 1170px;
-    height: 294px;
-  }
-  
-  /* banners from WHAT WE DO */
-  
-  .moto-cards {
-    display: flex;
-    gap: 30px;
-    padding: 0px;
-  }
-  
-  .motto-cards-elements {
-    position: relative;
-    list-style: none;
-    width: 370px;
-    height: 294px;
-  }
-  
-  .overlay-text {
-    background-color: grey;
-    position: absolute;
-    bottom: 0;
-    width: 370px;
-    height: 70px;
-    background: #2f303acc;
-    color: #ffffff;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-  }
-  .overlay-text-1 {
-    height: 16px;
-    margin: 0px;
-  }
-  /* FINAL - banners from WHAT WE DO */
-  /* FINAL - WHAT WE DO section */
-  
-  /* OUR TEAM section */
-  
+
+  /* Tableta - stilizare zona de Our Team */
+
   .third-container {
-    display: flex;
-    flex-direction: column;
-    width: 1600px;
-    height: 648px;
-    margin-top: 150px;
-    background: #f5f4fa;
+    padding: 60px 15px;
   }
-  
-  .second-title-2 {
-    text-align: center;
-    margin-bottom: 32px;
-  }
-  
+
   .section-team {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 1170;
-    height: 428;
-    margin-bottom: 32px;
-    margin-left: 215px;
-    width: 1170px;
-    height: 368px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   }
-  
+
   .all-our-team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 270px;
-    height: 428px;
-    border-radius: 0px, 0px, 4px, 4px;
+  flex-basis: calc(50% - 15px);
   }
-  
-  .our-team {
-    height: 48px;
-    margin-top: 30px;
-    margin-bottom: 16px;
-  }
-  .our-team img {
-    margin-right: 24px;
-  }
-  .our-team-1,
-  .our-team-2 {
-    height: 19px;
-  }
-  .our-team-1 {
-    margin-bottom: 10px;
-  }
-  
-  .our-team > .our-team-1 {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.1875em;
-    letter-spacing: 0.03em;
-    text-align: center;
-    color: var(--heading-color);
-  }
-  
-  .our-team > .our-team-2 {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.1875em;
-    letter-spacing: 0.03em;
-    text-align: center;
-    color: var(--text-color);
-    font-style: normal;
-  }
-  
+
   .icons-team {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    width: 206px;
-    height: 44px;
-    padding: 0px;
-    margin-top: 0px;
-    margin-bottom: 30px;
+    padding-left: 74px;
+    padding-right: 74px;
   }
-  .icons-team li {
-    list-style: none;
-    display: flex;
-  }
-  
-  .socials-icons {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background: #ffffff1a;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .socials-icons:hover,
-  .socials-icons:focus {
-    background: var(--link-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .socials-icons:hover svg,
-  .socials-icons:focus svg {
-    color: var(--contrast-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .socials-icons svg {
-    width: 20px;
-    height: 20px;
-    color: var(--social-icons-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* FINAL - OUR TEAM section */
-  
-  /* REGULAR CUSTOMERS section */
+
+  /* Tableta - REGULAR CUSTOMERS section */
+
   .fourth-container {
-    display: flex;
-    flex-direction: column;
-    width: 1170px;
-    height: 184px;
-    margin-left: 215px;
-    margin-top: 94px;
-    margin-bottom: 94px;
-  }
   
+  width: 100%;
+  height: auto;
+  padding: 60px 15px;
+  gap: 30px;
+  }
+
   .regular-customers {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 2.625em;
-    letter-spacing: 0.03em;
-    text-align: center;
-    color: var(--heading-color);
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
+  font-size: 28px;
+  line-height: 33px;
+  margin: 0;
   
+  }
+
   .icons-fourth-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    width: 1170px;
-    height: 92px;
-    padding: 0px;
-    margin: 0px;
+  gap: 30px;
+  /* width: 738px; */
+  /* height: 214px; */
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  margin: 0;
+   /* width: calc((100% - 2 * 30px) / 3); */
   }
-  
   .icons-fourth-container li {
-    list-style: none;
-    display: flex;
-    border: 0px;
+    /* justify-content: space-between; */
+    /* flex-basis: calc((100% - (5 * 30px + 6 * 2px)) / 6); */
+    /* flex-basis: calc(50% - 15px-2px); */
+    flex-basis: calc((100% - 2 * 30px) / 3); 
   }
-  
-  .company-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 170px;
-    height: 92px;
-    border: 1px solid #afb1b8;
-    border-radius: 4px;
-    color: var(--social-icons-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .company-icons:hover,
-  .company-icons:focus {
-    color: var(--link-color);
-    border-color: var(--link-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* fiecare svg avea dimensiuni diferite */
-  .icon-1c svg {
-    width: 41px;
-    height: 46.7px;
-  }
-  
-  .icon-2c svg {
-    width: 40px;
-    height: 52px;
-  }
-  .icon-3c svg {
-    width: 43.46px;
-    height: 41.18px;
-  }
-  .icon-4c svg {
-    width: 84.44px;
-    height: 440.62px;
-  }
-  .icon-5c svg {
-    width: 62.54px;
-    height: 45.43px;
-  }
-  .icon-6c svg {
-    width: 93.79px;
-    height: 43.93px;
-  }
-  /* FINAL - REGULAR CUSTOMERS section */
-  
-  /* FOOTER */
-  
-  footer {
-    background-color: var(--color-background);
-    color: #ffffff;
-  }
-  
-  .end-page {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 215px;
-    padding-right: 215px;
-    width: 100%;
-    height: 251px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    gap: 70px;
-    box-sizing: border-box;
-  }
-  
-  .end-section {
-    width: 231px;
-    height: 131px;
-    gap: 28px;
-  }
-  
-  .logo-footer {
-    width: 145px;
-    height: 31px;
-  }
-  
-  .end-section .logo {
-    color: #ffffff;
-  }
-  
-  .contacts-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 12px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1emx;
-    letter-spacing: 0.03em;
-    text-align: left;
-    color: #ffffff;
-    width: 231px;
-    height: 72px;
-  }
-  
-  .end-section .end-section-1 {
-    width: 207px;
-    margin: 0;
-  }
-  
-  .contacts-footer .end-section-2 {
-    width: 231px;
-    color: #fff;
-    opacity: 60%;
-  }
-  
-  .end-section-1,
-  .end-section-2 {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1emx;
-    letter-spacing: 0.03em;
-    text-align: left;
-    height: 16px;
-  }
-  
-  .end-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: baseline;
-  }
-  
-  /* "Find us on" sub-section */
-  .social-contacts {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 206px;
-    height: 80px;
-    margin-top: 12px;
-    gap: 20px;
-  }
-  .social-contacts-text {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 16px;
-    letter-spacing: 0.03em;
-    text-align: left;
-    color: var(--contrast-color);
-    width: 100px;
-    height: 16px;
-  }
-  
-  .social-contacts-text p {
-    margin: 0;
-  }
-  .social-contacts-icons {
-    display: flex;
-    width: 206px;
-    height: 44px;
-    justify-content: space-between;
-  }
-  .social-contacts-icons .social-contacts-icons1 {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 22px;
-    background: #ffffff1a;
-    color: var(--contrast-color);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .social-contacts-icons .social-contacts-icons1:hover,
-  .social-contacts-icons .social-contacts-icons1:focus {
-    background-color: var(--link-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .social-contacts-icons .social-contacts-icons1 svg {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .address1 {
-    width: 207px;
-    height: 16px;
-  }
-  .address2 {
-    width: 231px;
-    height: 16px;
-  }
-  .address3 {
-    width: 231px;
-    height: 16px;
-  }
-  /* FINAL - "Find us on" sub-section */
-  
-  /* Subscribe to the newsletter - section */
-  
-  .subscribe {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 570px;
-    height: 86px;
-    margin-top: 8px;
-    padding: 0;
-  }
-  
-  .subscribe-form {
-    display: flex;
-    gap: 12px;
-    position: relative;
-    box-sizing: border-box;
-  }
-  
-  .subscribe-text {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 16px;
-    letter-spacing: 0.03em;
-    text-align: left;
-  }
-  
-  .subscribe-form input {
-    width: 358px;
-    height: 50px;
-    border-radius: 4px;
-    border: 1px solid #ffffff4d;
-    padding-left: 16px;
-    background-color: var(--color-background);
-    outline: none;
-    box-sizing: border-box;
-  }
-  
-  .subscribe-form .input::placeholder {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.03em;
-    text-align: left;
-    color: #ffffff99;
-  }
-  .first-sub-btn {
-    box-sizing: border-box;
-    display: flex;
-    width: 200px;
-    height: 50px;
-  }
-  
-  .subscribe-btn {
-    border: none;
-    border-radius: 4px;
-    width: 200px;
-    height: 50px;
-    background-color: var(--link-color);
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 30px;
-    letter-spacing: 0.06em;
-    text-align: left;
-    padding-left: 43px;
-    padding-right: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  .icon-send {
-    width: 24px;
-    height: 24px;
-    color: #fff;
-    position: absolute;
-    transform: translateY(50%);
-    right: 43px;
-    margin: 0;
-  }
-  
-  /* FINAL - subscribe to the newsletter - section */
-  /* FINAL FOOTER */
-  
-  
   
 
-  
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /* PORTOFOLIO section */
-  
-  .portofolio-content {
-    display: flex;
-    flex-direction: column;
-    width: 1170px;
-    height: 1360px;
-    border-radius: 1px;
-    margin-top: 94px;
-    margin-left: 215px;
-    margin-bottom: 94px;
+  .company-icons {
+  /* width: 226px; */
+  /* height: 92px; */
+  min-width: 226px;
+  /* flex-basis: calc(50% - 15px - 2px); */
+  padding-top: 16px;
+  padding-bottom: 16px;
   }
-  
-  /* Butoanele All, Web-sites etc. */
-  .portofolio-1 {
-    display: flex;
-    justify-content: center;
-    height: 88px;
+
+  /* Tableta - stilizare footer */
+
+  .end-page {
+  /* width: 768px; */
+  /* height: 464px; */
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-left: 76px;
+  padding-right: 89px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  gap: 60px;
+  flex-wrap: wrap;
   }
-  
-  .portofolio-sections li {
-    list-style: none;
+
+  .end-section {
+  width: 232px;
+  height: 128px;
+  gap: 28px;
+  align-items: center;
   }
-  
-  .portofolio-sections button {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.625em;
-    letter-spacing: 0.03em;
+
+  .contacts-footer {
+  align-items: center;
+  width: 232px;
+  }
+
+  .end-section-1,
+  .end-section-2 {
+  text-align: center;
+  }
+
+  .social-contacts-text {
     text-align: center;
-    text-decoration: none;
-    list-style: none;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--color-backgroung-buttons);
-    cursor: pointer;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .subscribe {
+  /* width: 450px; */
+  /* height: 156px; */
+  width: 100%;
+  padding-left: 90px;
+  padding-right: 63px;
+   
+  }
+
+  .subscribe-text {
+  text-align: center;
+  }
+
+  .subscribe-form {
+   gap: 20px;
+   flex-direction: column;
+   align-items: center;
+  
+  }
+
+  .email-sub {
+    width: 100%;
+  }
+
+  .subscribe-form input {
+    /* width: 450px; */
+    width: 100%;
+  }
+
+  /* .email-sub {
+    width: 450px;
+    align-items: center;
+  } */
+
+  
+
+}
+
+/* Stilizare pentru desktop */
+@media screen and (min-width: 1158px) {
+    .header-content {
+    padding-top: 24px;
+    padding-bottom: 25px;
+    padding-left: 215px;
+    padding-right: 215px;
+    gap: 50px;
   }
   
-  .portofolio-sections button:hover,
-  .portofolio-sections button:focus,
-  .portofolio-sections button:active {
-    color: #ffffff;
-    background-color: #2196f3;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* ascundere meniul de la Mobile */
+  .js-open-menu {
+    display: none;
   }
-  
-  .portofolio-sections {
-    display: flex;
-    width: 516px;
-    height: 38px;
-    border-radius: 4px;
-    justify-content: space-between;
-  
-    margin-bottom: 50px;
-    font-family: var(--heading-color);
+
+  .menu-container {
+    display: none;
   }
-  /* FINAL - butoanele All, Web-sites etc. */
-  
-  /* Posterele cu portofoliile */
-  
-  .portofolio-2 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
-    width: 1170px;
-    height: 1272px;
+
+
+   /* stilizare meniu cu dimensiunile specifice desktop-ului*/
+  .logo {
+  font-size: 26px;
+  line-height: 1.9375em;
+   width: 145px;
+  height: 31px;
   }
-  
-  .project {
-    width: 370px;
-    height: 404px;
-    border-radius: 4px;
-    border: 1px solid #eeeeee;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .container-2 {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    gap: 40px;
   }
-  
-  .project:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  .email-address,
+  .phone-number {
+    font-size: 14px;
   }
+
+  /* stilizarea cu sublinierea paginii curente (unde se află utilizatorul acum)*/
   
-  img.portofolio-images {
-    width: 370px;
-    hyphens: 294px;
-  }
-  
-  .domains {
-    width: 322px;
-    height: 70px;
-    margin-left: 24px;
-    margin-right: 24px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .domains > .domain-title {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 2.25em;
-    letter-spacing: 0.06em;
-    text-align: left;
-    color: var(--heading-color);
-  }
-  
-  .domains > .domain-zone {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.875em;
-    letter-spacing: 0.03em;
-    text-align: left;
-    font-style: normal;
-    color: var(--text-color);
-  }
-  
-  /* overlay-ul din portofolio */
-  
-  .container-overlay-portofolio {
+  .menu,
+  .active-link {
     position: relative;
-    width: 100%;
-  }
-  
-  .portofolio-images-1 {
-    display: block;
-  }
-  
-  .overlay-portofolio {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #2196f3e5;
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    transition: 0.5s ease;
-  }
-  
-  .project:hover .overlay-portofolio,
-  .project:focus .overlay-portofolio {
     height: 100%;
+  }
+  
+  .menu:active::after,
+  .menu:focus::after {
+    content: "";
+    position: absolute;
+    bottom: -34px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--link-color);
+    border-radius: 2px;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
-  .text {
+  .active-link::after {
+    content: "";
     position: absolute;
-    width: 322px;
-    height: 140px;
-    margin-top: 63px;
-    margin-left: 24px;
-    bottom: 91px;
-    color: white;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0.03em;
+    bottom: -34px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--link-color);
+    border-radius: 2px;
+  }
+  
+  /* FINAL - stilizare cu sublinierea paginii curente */
+
+  /* Desktop - EFFECTIVE SOLUTIONS FOR YOUR BUSINESS section */
+
+  .first-section {
+    height: 600px;
+    background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/first-page-background-d.png"),
+    url("../images/first-page-background-d-2x.png");
+    
+  }
+
+  .hero-heading {
+   height: 120px;
+  }
+
+  .hero-heading h1 {
+    font-size: 44px;
+    line-height: 60px;
+  }
+  
+
+  /* Desktop - redimensionare modal din butonul "Request our service" */
+  .modal-content {
+  width: 528px;
+  height: 581px;
+  }
+
+  .modal-form input {
+    width: 448px;
+  }
+
+  .comment-space {
+  width: 448px;
+  }
+
+/* Desktop - pictogramele cu attention to details etc. */
+
+.second-container-2 {
+  display: flex;
+  height: 251px;
+  justify-content: space-between;
+  align-content: center;
+  /* flex-wrap: wrap; */
+  margin-bottom: 94px;
+  margin-top: 94px;
+  padding-left: 215px;
+  padding-right: 215px;
+  width: 100%;
+  max-width: 1600px;
+  gap: 30px;
+
+}
+
+.sc-principal {
+  /* width: 270px; */
+  /* height: 251px; */
+  flex-basis: calc(50% - 15px);
+  flex-grow: 1; 
+ }
+ .advantage-icons {
+  /* width: 270px; */
+  /* height: 120px; */
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.sub-menu {
+  /* width: 270px; */
+  /* height: 75px; */
+  width: 100%;
+}
+
+  /* Desktop - stilizare zona de Our Team */
+
+  .third-container {
+  padding: 94px 215px;
+  }
+
+  .section-team {
+  align-items: center;
+  justify-content: space-between;
+  }
+
+  .all-our-team {
+    flex-basis: calc(50% - 15px);
+  }
+
+  .all-our-team>picture {
+    width: 100%; 
+    height: auto; 
+  }
+
+  .icons-team {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+
+  /* Desktop - REGULAR CUSTOMERS section */
+
+  .fourth-container {
+  /* width: 1600px; */
+  /* height: 372px; */
+  width: 100%;
+  /* height: auto; */
+  height: 372px;
+  padding: 94px 215px;
+  
+
+  }
+
+  .regular-customers {
+  font-size: 36px;
+  line-height: 2.625em;
+  margin: 0;
+    
+
+  }
+
+  .icons-fourth-container {
+  gap: 30px;
+  /* width: 1170px; */
+  height: 92px;
+   width: 100%;
+  /* height: auto; */
+  margin: 0;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  }
+
+
+  .icons-fourth-container li {
+    /* justify-content: space-between; */
+    /* flex-basis: calc((100% - (5 * 30px + 6 * 2px)) / 6); */
+    flex-basis: calc(50% - 15px);
+    
+  }
+  .company-icons {
+  /* width: 170px; */
+  /* height: 92px; */
+  width: 100%;
+  /* padding-top: 16px; */
+  /* padding-bottom: 16px; */
+ /* flex-basis: calc((100% - (5 * 30px + 6 * 2px)) / 6); */
+  /* max-width: 170px; */
+  /* justify-content: space-between; */
+  /* align-items: stretch; */
+  }
+
+  /* Desktop - stilizare footer */
+
+  .end-page {
+  /* width: 1600px; */
+  /* height: 251px; */
+  width: 100%;
+  height: auto;
+  padding: 60px 215px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  gap: 70px;
+  
+  }
+
+  .end-section {
+  width: 231px;
+  height: 131px;
+  gap: 28px;
+  }
+
+  .contacts-footer {
+  text-align: left;
+  width: 231px;
+  }
+
+  .end-section-1,
+  .end-section-2 {
+  text-align: left;
+  }
+
+  .social-contacts-text {
     text-align: left;
   }
-  /* FINAL - overlay-ul din portofolio */
+
+  .subscribe {
+  width: 570px;
+  height: 86px;
+  margin-top: 8px;
+  padding: 0;
+  }
+
+  .subscribe-text {
+  text-align: left;
+  }
+
+  .subscribe-form {
+   gap: 12px;
+   flex-wrap: wrap;
+   justify-content: space-between;
   
-  /* FINAL - posterele cu portofoliile */
-  
-  /* FINAL PORTOFOLIO */
-  
+  }
+  .email-sub {
+    width: 62.8%;
+    min-width: 245px;
+  }
+  .subscribe-form input {
+    width: 100%;
+    /* width: 358px; */
+    /* width: 62.8%; */
+  }
+
+  .icon-send {
+  transform: translateY(50%);
+  right: 43px;
+  }
+
+
+}
+
+/* PORTOFOLIO section */
+
+.portofolio-content {
+  display: flex;
+  flex-direction: column;
+  width: 1170px;
+  height: 1360px;
+  border-radius: 1px;
+  margin-top: 94px;
+  margin-left: 215px;
+  margin-bottom: 94px;
+}
+
+/* Butoanele All, Web-sites etc. */
+.portofolio-1 {
+  display: flex;
+  justify-content: center;
+  height: 88px;
+}
+
+.portofolio-sections li {
+  list-style: none;
+}
+
+.portofolio-sections button {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.625em;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-backgroung-buttons);
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portofolio-sections button:hover,
+.portofolio-sections button:focus,
+.portofolio-sections button:active {
+  color: #ffffff;
+  background-color: #2196f3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portofolio-sections {
+  display: flex;
+  width: 516px;
+  height: 38px;
+  border-radius: 4px;
+  justify-content: space-between;
+
+  margin-bottom: 50px;
+  font-family: var(--heading-color);
+}
+/* FINAL - butoanele All, Web-sites etc. */
+
+/* Posterele cu portofoliile */
+
+.portofolio-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  width: 1170px;
+  height: 1272px;
+}
+
+.project {
+  width: 370px;
+  height: 404px;
+  border-radius: 4px;
+  border: 1px solid #eeeeee;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+img.portofolio-images {
+  width: 370px;
+  hyphens: 294px;
+}
+
+.domains {
+  width: 322px;
+  height: 70px;
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.domains > .domain-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2.25em;
+  letter-spacing: 0.06em;
+  text-align: left;
+  color: var(--heading-color);
+}
+
+.domains > .domain-zone {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.875em;
+  letter-spacing: 0.03em;
+  text-align: left;
+  font-style: normal;
+  color: var(--text-color);
+}
+
+/* overlay-ul din portofolio */
+
+.container-overlay-portofolio {
+  position: relative;
+  width: 100%;
+}
+
+.portofolio-images-1 {
+  display: block;
+}
+
+.overlay-portofolio {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2196f3e5;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.project:hover .overlay-portofolio,
+.project:focus .overlay-portofolio {
+  height: 100%;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text {
+  position: absolute;
+  width: 322px;
+  height: 140px;
+  margin-top: 63px;
+  margin-left: 24px;
+  bottom: 91px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+/* FINAL - overlay-ul din portofolio */
+
+/* FINAL - posterele cu portofoliile */
+
+/* FINAL PORTOFOLIO */

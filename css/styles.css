@@ -500,13 +500,13 @@ input.input-ckd:checked ~ .checked-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 270px;
-  height: 120px;
+  /* width: 270px; */
+  /* height: 120px; */
   border-radius: 4px;
   background: #f5f4fa;
 }
 .second-section {
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .second-section > .menu-item {
@@ -516,6 +516,11 @@ input.input-ckd:checked ~ .checked-icon {
   letter-spacing: 0.03em;
   text-align: left;
   color: var(--heading-color);
+  padding-top: 30px;
+  padding-bottom: 10px;
+  /* height: 16px; */
+  margin: 0;
+  display: flex;
 }
 
 .second-section > .sub-menu {
@@ -526,17 +531,12 @@ input.input-ckd:checked ~ .checked-icon {
   color: var(--text-color);
 }
 
-.menu-item {
-  margin-bottom: 10px;
-  height: 16px;
-  margin-top: 30px;
-}
-
 .sub-menu {
   width: 354px;
   height: 75px;
+  width: 100%;
   margin: 0;
-  margin-right: 0;
+  /* margin-right: 0; */
   text-align: left;
 
 }
@@ -547,9 +547,13 @@ input.input-ckd:checked ~ .checked-icon {
 .second-container-3 {
   display: flex;
   flex-direction: column;
-  width: 1170px;
-  height: 386px;
-  margin-left: 215px;
+  /* width: 1170px; */
+  /* height: 386px; */
+  /* margin-left: 215px; */
+  width: 100%;
+  height: auto;
+  padding-left: 215px;
+  padding-right: 215px;
 }
 
 .second-title {
@@ -562,18 +566,20 @@ input.input-ckd:checked ~ .checked-icon {
 }
 
 .second-title-1 {
-  text-align: center;
-  margin-bottom: 32px;
-  width: 1170px;
+  /* text-align: center; */
+  /* margin-bottom: 32px; */
+  /* width: 1170px; */
 }
 
 .pictures-1 {
   display: flex;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
   align-items: center;
   justify-content: space-between;
-  width: 1170px;
-  height: 294px;
+  /* width: 1170px; */
+  /* height: 294px; */
+  width: 100%;
+  height: auto;
 }
 
 /* banners from WHAT WE DO */
@@ -582,21 +588,34 @@ input.input-ckd:checked ~ .checked-icon {
   display: flex;
   gap: 30px;
   padding: 0px;
+  width: 100%;
 }
 
 .motto-cards-elements {
   position: relative;
   list-style: none;
-  width: 370px;
-  height: 294px;
+  display: flex;
+  /* width: 370px; */
+  /* height: 294px; */
+  flex-basis: calc(33.33% - 20px);
+
+}
+
+.motto-cards-elements>img {
+  width: auto; /* Pentru a păstra proporțiile originale ale imaginii */
+  height: auto; /* Pentru a păstra proporțiile originale ale imaginii */
+  max-width: 100%; /* Asigură că imaginea nu depășește lățimea containerului */
+  max-height: 100%; /* Asigură că imaginea nu depășește înălțimea containerului */
 }
 
 .overlay-text {
   background-color: grey;
   position: absolute;
   bottom: 0;
-  width: 370px;
+  /* width: 370px; */
   height: 70px;
+  width: 100%;
+  /* height: auto; */
   background: #2f303acc;
   color: #ffffff;
   text-align: center;
@@ -618,20 +637,23 @@ input.input-ckd:checked ~ .checked-icon {
   display: flex;
   flex-direction: column;
   width: 100%;
-  /* width: 1600px; */
   height: auto;
-  margin-top: 150px;
+  margin-top: 60px;
   background: #f5f4fa;
 }
 
 .second-title-2 {
   text-align: center;
-  margin-bottom: 32px;
+  padding-bottom: 30px;
+  margin: 0;
 }
 
 .section-team {
   display: flex;
   height: auto;
+  width: 100%;
+  gap: 30px;
+  box-sizing: border-box;
 }
 
 .all-our-team {
@@ -640,23 +662,34 @@ input.input-ckd:checked ~ .checked-icon {
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
-  border-radius: 0px, 0px, 4px, 4px;
+  border-radius: 0px 0px 4px 4px;
+   flex-grow: 1;
 }
 
 .our-team {
-  height: 48px;
+  /* height: 48px; */
   margin-top: 30px;
-  margin-bottom: 16px;
-}
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  
+  }
+
 .our-team img {
   margin-right: 24px;
 }
-.our-team-1,
+.our-team-1 {
+  height: 19px;
+  width: 100%;
+}
 .our-team-2 {
   height: 19px;
+  width: 100%;
 }
 .our-team-1 {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .our-team > .our-team-1 {
@@ -682,11 +715,16 @@ input.input-ckd:checked ~ .checked-icon {
   display: flex;
   gap: 10px;
   justify-content: center;
-  width: 206px;
-  height: 44px;
-  padding: 0px;
-  margin-top: 0px;
-  margin-bottom: 30px;
+  /* width: 206px; */
+  width: 100%;
+  /* height: 44px; */
+  padding-top: 16px;
+  padding-bottom: 24px;
+  margin: 0;
+  box-sizing: border-box;
+  padding-left: 0;
+    padding-right: 0;
+  
 }
 .icons-team li {
   list-style: none;
@@ -728,7 +766,7 @@ input.input-ckd:checked ~ .checked-icon {
 .fourth-container {
   display: flex;
   flex-direction: column;
- 
+  box-sizing: border-box;
 }
 
 .regular-customers {
@@ -748,19 +786,21 @@ input.input-ckd:checked ~ .checked-icon {
   height: 92px;
   padding: 0px;
   margin: 0px;
+  box-sizing: border-box;
 }
 
 .icons-fourth-container li {
   list-style: none;
   display: flex;
   border: 0px;
+  flex-grow: 1; /* Elementele se vor extinde pe lățimea disponibilă */
 }
 
 .company-icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
+  /* width: 170px; */
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
@@ -777,31 +817,10 @@ input.input-ckd:checked ~ .checked-icon {
 }
 
 /* fiecare svg avea dimensiuni diferite */
-.icon-1c svg {
-  width: 41px;
-  height: 46.7px;
-}
 
-.icon-2c svg {
-  width: 40px;
-  height: 52px;
-}
-.icon-3c svg {
-  width: 43.46px;
-  height: 41.18px;
-}
-.icon-4c svg {
-  width: 84.44px;
-  height: 440.62px;
-}
-.icon-5c svg {
-  width: 62.54px;
-  height: 45.43px;
-}
-.icon-6c svg {
-  width: 93.79px;
-  height: 43.93px;
-}
+
+
+ 
 /* FINAL - REGULAR CUSTOMERS section */
 
 /* FOOTER */
@@ -968,6 +987,7 @@ footer {
   box-sizing: border-box;
 }
 
+
 .subscribe-form .input::placeholder {
   font-size: 16px;
   font-weight: 400;
@@ -981,6 +1001,7 @@ footer {
   display: flex;
   width: 200px;
   height: 50px;
+  position: relative;
 }
 
 .subscribe-btn {
@@ -1008,7 +1029,10 @@ footer {
   color: #fff;
   position: absolute;
   margin: 0;
+  transform: translateY(50%);
+  right: 40px;
 }
+
 
 /* FINAL - subscribe to the newsletter - section */
 /* FINAL FOOTER */
@@ -1199,7 +1223,8 @@ footer {
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url("../images/first-page-background-m.png");
+    url("../images/first-page-background-m.png"),
+    url("../images/first-page-background-m-2x.png");
   }
 
   .hero-heading {
@@ -1226,10 +1251,10 @@ footer {
   }
 
 
-/* Tableta - pictogramele cu attention to details etc. */
+/* Mobil - pictogramele cu attention to details etc. */
  .second-container-2 {
-  max-width: 480px;
-  height: 994px;
+  max-width: 100%;
+  /* height: 994px; */
   flex-direction: column;
   gap: 30px;
   padding-left: 15px;
@@ -1240,17 +1265,26 @@ footer {
  }
 
  .sc-principal {
-  width: 450px;
-  height: 226px;
+  width: 100%;
+  /* height: 226px; */
  }
  .advantage-icons {
-    width: 450px;
-  height: 120px;
+    /* width: 450px; */
+  /* height: 120px; */
+  width: 100%;
+  padding: 25px 42.74%;
   
   }
+
+  .menu-item {
+    align-items: center;
+    justify-content: center;
+  }
+
   .sub-menu {
-  width: 450px;
-  height: 50px;
+  /* width: 450px; */
+  /* height: 50px; */
+  width: 100%;
 }
 
   /* Mobil - ascundere What we do */
@@ -1260,30 +1294,31 @@ footer {
   /* Mobil - stilizare zona de Our Team */
 
   .third-container {
-    height: 2761px;
-
+    padding: 60px 15px;
   }
 
   .section-team {
-  width: 480px;
   flex-direction: column;
-  padding-left: 15px;
-  padding-right: 15px;
-  gap: 30px;
+  justify-content: center;
   }
 
   .all-our-team {
-  width: 450px;
-  height: 622px;
+  width: 100%;
+  height: auto;
+  }
+
+  .icons-team {
+    padding-left: 27.11%;
+    padding-right: 27.11%;
   }
 
   /* Mobil - REGULAR CUSTOMERS section */
 
 .fourth-container {
-  width: 480px;
-  height: 519px;
-  padding-left: 15px;
-  padding-right: 15px;
+  
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
     padding-top: 60px;
     padding-bottom: 60px;
     gap: 30px;
@@ -1297,26 +1332,45 @@ footer {
   }
 
   .icons-fourth-container {
-  
   gap: 30px;
-  width: 450px;
-  height: 336px;
+  /* width: 450px; */
+  /* height: 336px; */
+  width: 100%;
+  height: auto;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  margin: 0;
   
+  }
+  .icons-fourth-container li {
+    flex-basis: calc((100% - 30px) / 2); 
+    
   }
 
   .company-icons {
-  width: 210px;
-  height: 92px;
+  /* width: 210px; */
+  /* width: 46%; */
+  /* height: 92px; */
+  /* flex-basis: calc(50% - 15px-2); */
+  /* padding: 16px 52px; */
+  padding-top: 16px;
+  padding-bottom: 16px;
+  flex-grow: 1;
   
   
   }
+
+  
 
   /* Mobil - stilizare footer */
 
   .end-page {
-  width: 480px;
-  height: 604px;
+  /* width: 480px; */
+  /* height: 604px; */
+  width: 100%;
+  height: auto;
   padding-top: 60px;
   padding-bottom: 60px;
   padding-left: 15px;
@@ -1351,7 +1405,8 @@ footer {
   }
 
   .subscribe {
-  width: 450px;
+  /* width: 450px; */
+  width: 100%;
   height: 156px;
   
    
@@ -1367,15 +1422,16 @@ footer {
    align-items: center;
   
   }
-
+  
+  .email-sub {
+    width: 100%;
+  }
   .subscribe-form input {
-    width: 450px;
+    /* width: 450px; */
+    width: 100%;
   }
 
-  .icon-send {
-  transform: translateY(342%);
-  right: 160px;
-  }
+  
 
 
 
@@ -1471,7 +1527,8 @@ footer {
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url("../images/first-page-background-t.png");
+    url("../images/first-page-background-t.png"),
+    url("../images/first-page-background-t-2x.png");
     
   }
 
@@ -1500,8 +1557,10 @@ footer {
 
   /* Tableta - pictogramele cu attention to details etc. */
  .second-container-2 {
-  max-width: 768px;
-  height: 507px;
+  /* max-width: 768px; */
+  width: 100%;
+  /* height: 507px; */
+  height: auto;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
@@ -1514,83 +1573,108 @@ footer {
  }
 
  .sc-principal {
-  width: 354px;
-  height: 251px;
+  /* width: 354px; */
+  /* height: 251px; */
+  flex-basis: calc(50% - 15px);
+  flex-grow: 1; 
  }
  .advantage-icons {
-    width: 354px;
-  height: 120px;
+    /* width: 354px; */
+  /* height: 120px; */
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
   
   }
 
+  
   .sub-menu {
-  width: 354px;
-  height: 75px;
+  /* width: 354px; */
+  /* height: 75px; */
+  width: 100%;
   }
 
   /* Tableta - ascundere What we do */
   .second-container-3 {
     display: none;
   }
+
   /* Tableta - stilizare zona de Our Team */
 
   .third-container {
-    height: 1285px;
-
+    padding: 60px 15px;
   }
 
   .section-team {
-  width: 768px;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-left: 15px;
-  padding-right: 15px;
-  gap: 30px;
   }
 
   .all-our-team {
-  width: 354px;
-  height: 536px;
+  flex-basis: calc(50% - 15px);
+  }
+
+  .icons-team {
+    padding-left: 74px;
+    padding-right: 74px;
   }
 
   /* Tableta - REGULAR CUSTOMERS section */
 
   .fourth-container {
-  width: 738px;
-  height: 397px;
-  padding-left: 15px;
-  padding-right: 15px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+  
+  width: 100%;
+  height: auto;
+  padding: 60px 15px;
+  gap: 30px;
   }
 
   .regular-customers {
   font-size: 28px;
   line-height: 33px;
+  margin: 0;
   
   }
 
   .icons-fourth-container {
-  
   gap: 30px;
-  width: 738px;
-  height: 214px;
+  /* width: 738px; */
+  /* height: 214px; */
   flex-wrap: wrap;
-  
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  margin: 0;
+   /* width: calc((100% - 2 * 30px) / 3); */
   }
+  .icons-fourth-container li {
+    /* justify-content: space-between; */
+    /* flex-basis: calc((100% - (5 * 30px + 6 * 2px)) / 6); */
+    /* flex-basis: calc(50% - 15px-2px); */
+    flex-basis: calc((100% - 2 * 30px) / 3); 
+  }
+  
 
   .company-icons {
-  width: 226px;
-  height: 92px;
-  
+  /* width: 226px; */
+  /* height: 92px; */
+  min-width: 226px;
+  /* flex-basis: calc(50% - 15px - 2px); */
+  padding-top: 16px;
+  padding-bottom: 16px;
   }
 
   /* Tableta - stilizare footer */
 
   .end-page {
-  width: 768px;
-  height: 464px;
+  /* width: 768px; */
+  /* height: 464px; */
+  width: 100%;
+  height: auto;
   padding-top: 60px;
   padding-bottom: 60px;
   padding-left: 76px;
@@ -1623,9 +1707,11 @@ footer {
   }
 
   .subscribe {
-  width: 450px;
-  height: 156px;
-  margin-left: 90px;
+  /* width: 450px; */
+  /* height: 156px; */
+  width: 100%;
+  padding-left: 90px;
+  padding-right: 63px;
    
   }
 
@@ -1640,8 +1726,13 @@ footer {
   
   }
 
+  .email-sub {
+    width: 100%;
+  }
+
   .subscribe-form input {
-    width: 450px;
+    /* width: 450px; */
+    width: 100%;
   }
 
   /* .email-sub {
@@ -1649,10 +1740,7 @@ footer {
     align-items: center;
   } */
 
-  .icon-send {
-  transform: translateY(342%);
-  right: 160px;
-  }
+  
 
 }
 
@@ -1737,7 +1825,8 @@ footer {
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url("../images/first-page-background-d.png");
+    url("../images/first-page-background-d.png"),
+    url("../images/first-page-background-d-2x.png");
     
   }
 
@@ -1772,87 +1861,121 @@ footer {
   height: 251px;
   justify-content: space-between;
   align-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin-bottom: 94px;
   margin-top: 94px;
   padding-left: 215px;
   padding-right: 215px;
-  width: 1600px;
+  width: 100%;
+  max-width: 1600px;
   gap: 30px;
 
 }
 
 .sc-principal {
-  width: 270px;
-  height: 251px;
-  
+  /* width: 270px; */
+  /* height: 251px; */
+  flex-basis: calc(50% - 15px);
+  flex-grow: 1; 
  }
  .advantage-icons {
-  width: 270px;
-  height: 120px;
-  
+  /* width: 270px; */
+  /* height: 120px; */
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .sub-menu {
-  width: 270px;
-  height: 75px;
+  /* width: 270px; */
+  /* height: 75px; */
+  width: 100%;
 }
 
   /* Desktop - stilizare zona de Our Team */
 
   .third-container {
-  height: 708px;
-
+  padding: 94px 215px;
   }
+
   .section-team {
-  width: 1600px;
   align-items: center;
   justify-content: space-between;
-  padding-left: 215px;
-  padding-right: 215px;
   }
 
   .all-our-team {
-  width: 270px;
-  height: 428px;
+    flex-basis: calc(50% - 15px);
   }
+
+  .all-our-team>picture {
+    width: 100%; 
+    height: auto; 
+  }
+
+  .icons-team {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
 
   /* Desktop - REGULAR CUSTOMERS section */
 
   .fourth-container {
-  width: 1600px;
+  /* width: 1600px; */
+  /* height: 372px; */
+  width: 100%;
+  /* height: auto; */
   height: 372px;
-  padding-left: 215px;
-  padding-right: 215px;
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding: 94px 215px;
+  
+
   }
 
   .regular-customers {
   font-size: 36px;
   line-height: 2.625em;
+  margin: 0;
     
 
   }
 
   .icons-fourth-container {
   gap: 30px;
-  width: 1170px;
+  /* width: 1170px; */
   height: 92px;
-  
+   width: 100%;
+  /* height: auto; */
+  margin: 0;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
   }
 
 
+  .icons-fourth-container li {
+    /* justify-content: space-between; */
+    /* flex-basis: calc((100% - (5 * 30px + 6 * 2px)) / 6); */
+    flex-basis: calc(50% - 15px);
+    
+  }
   .company-icons {
-  width: 170px;
-  height: 92px;
-  
+  /* width: 170px; */
+  /* height: 92px; */
+  width: 100%;
+  /* padding-top: 16px; */
+  /* padding-bottom: 16px; */
+ /* flex-basis: calc((100% - (5 * 30px + 6 * 2px)) / 6); */
+  /* max-width: 170px; */
+  /* justify-content: space-between; */
+  /* align-items: stretch; */
   }
 
   /* Desktop - stilizare footer */
 
   .end-page {
-  width: 1600px;
-  height: 251px;
+  /* width: 1600px; */
+  /* height: 251px; */
+  width: 100%;
+  height: auto;
   padding: 60px 215px;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -1893,11 +2016,18 @@ footer {
 
   .subscribe-form {
    gap: 12px;
+   flex-wrap: wrap;
+   justify-content: space-between;
   
   }
-
+  .email-sub {
+    width: 62.8%;
+    min-width: 245px;
+  }
   .subscribe-form input {
-    width: 358px;
+    width: 100%;
+    /* width: 358px; */
+    /* width: 62.8%; */
   }
 
   .icon-send {
