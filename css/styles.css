@@ -796,6 +796,14 @@ input.input-ckd:checked ~ .checked-icon {
   display: flex;
   border: 0px;
   flex-grow: 1; /* Elementele se vor extinde pe lățimea disponibilă */
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  color: var(--social-icons-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .company-icons {
@@ -804,17 +812,23 @@ input.input-ckd:checked ~ .checked-icon {
   align-items: center;
   /* width: 170px; */
   height: 92px;
-  border: 1px solid #afb1b8;
-  border-radius: 4px;
+  
   color: var(--social-icons-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.icons-fourth-container li:hover,
+.icons-fourth-container li:focus {
+ 
+  border-color: var(--link-color);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .company-icons:hover,
 .company-icons:focus {
   color: var(--link-color);
-  border-color: var(--link-color);
+  /* border-color: var(--link-color); */
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1042,6 +1056,13 @@ footer {
 
 /* FINAL - subscribe to the newsletter - section */
 /* FINAL FOOTER */
+
+/* Ascundere bara de derulare orizontală la ecran mai mic de 320px*/
+@media screen and (max-width: 320px) {
+  body {
+    overflow-x: hidden; 
+  }
+}
 
 /* Stilizare pentru mobil */
 @media screen and (max-width: 767px) {
@@ -1598,13 +1619,15 @@ footer {
   height: auto;
   flex-wrap: wrap;
   align-content: space-between;
+  justify-content: space-between;
   }
 
   .icons-fourth-container li {
     /* justify-content: space-between; */
-    /* flex-basis: calc((100% - (5 * 30px + 6 * 2px)) / 6); */
-    /* flex-basis: calc(50% - 15px-2px); */
+      /* flex-basis: calc(50% - 15px-2px); */
     flex-basis: calc((100% - 2 * 30px) / 3); 
+    
+    
   }
   
 
@@ -1840,6 +1863,10 @@ footer {
   }
 
   .icons-team {
+    padding-left: 11.85%;
+    padding-right: 11.85%;
+  }
+  .icons-team {
     padding-left: 32px;
     padding-right: 32px;
   }
@@ -1931,7 +1958,7 @@ footer {
   
   }
   .email-sub {
-    width: 62.8%;
+    width: 61%;
     min-width: 245px;
   }
  
